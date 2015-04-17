@@ -234,6 +234,12 @@
   },
   {
     "OEM": "HTC",
+    "name": "One One X",
+    "band": "GSM",
+    "codename": "endeavoru"
+  },
+  {
+    "OEM": "HTC",
     "name": "One M8",
     "band": "GSM",
     "codename": "m8"
