@@ -6,7 +6,7 @@
 
 var noDataMessage = 'No data provided!',
     noDeviceMessage = 'You have to specify device name!',
-    domain = window.location.href,
+    domain = location.href.replace(location.hash,""),
     config = '/config/devices.json',
     deviceImages = '/imgs/devices/',
     oemCheck = '',
