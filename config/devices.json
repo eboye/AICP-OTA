@@ -287,6 +287,12 @@
     "codename": "t0lte"
   },
   {
+    "OEM": "Samsung",
+    "name": "Galaxy Galaxy S3",
+    "band": "LTE",
+    "codename": "i9305"
+  },
+  {
     "OEM": "Asus",
     "name": "Nexus 7",
     "band": "LTE",
