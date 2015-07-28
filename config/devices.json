@@ -343,6 +343,12 @@
     "network": "Verizon",
     "band": "GSM",
     "codename": "vs985"
+  },
+  {
+    "OEM": "Sony",
+    "name": "Xperia SP",
+    "band": "GSM",
+    "codename": "huashan"
   }
 
 ]}
