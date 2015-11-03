@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,122 +25,155 @@
 
 <body>
 
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="http://eboye.github.io/AICP-OTA/"><img src="imgs/logo.png" alt="AICP Logo"/> AICP DIY Build</a>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://eboye.github.io/AICP-OTA/"><img src="imgs/logo.png" alt="AICP Logo" /> AICP DIY Build</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="http://eboye.github.io/AICP-OTA/"><i class="fa fa-download"></i>OTA updates <span class="sr-only">(current)</span></a></li>
+                    <li><a target="_blank" href="https://plus.google.com/u/0/communities/101008638920580274588"><i class="fa fa-google-plus"></i>Google+ Community</a></li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-code"></i>Source code<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a target="_blank" class="text-right" href="https://github.com/AICP"><i class="fa fa-github pull-left"></i>GitHub</a></li>
+                            <li><a target="_blank" class="text-right" href="http://gerrit.aicp-rom.com/"><i class="fa fa-server pull-left"></i>Gerrit</a></li>
+                            <li class="divider"></li>
+                            <li class="menu-title text-center text-capitalize">Build tutorials</li>
+                            <li class="divider"></li>
+                            <li><a class="text-right" href="build-on-linux.html"><i class="fa fa-code pull-left"></i>Linux</a></li>
+                            <li class="active"><a class="text-right" href="build-on-mac.html"><i class="fa fa-apple pull-left"></i>Mac</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!--/.navbar-collapse -->
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="http://eboye.github.io/AICP-OTA/"><i class="fa fa-download"></i>OTA updates <span class="sr-only">(current)</span></a></li>
-                <li><a target="_blank" href="https://plus.google.com/u/0/communities/101008638920580274588"><i class="fa fa-google-plus"></i>Google+ Community</a></li>
-                <li class="dropdown active">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-code"></i>Source code<span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a target="_blank" class="text-right" href="https://github.com/AICP"><i class="fa fa-github pull-left"></i>GitHub</a></li>
-                        <li><a target="_blank" class="text-right" href="http://gerrit.aicp-rom.com/"><i class="fa fa-server pull-left"></i>Gerrit</a></li>
-                        <li class="divider"></li>
-                        <li class="menu-title text-center text-capitalize">Build tutorials</li>
-                        <li class="divider"></li>
-                        <li><a class="text-right" href="build-on-linux.html"><i class="fa fa-code pull-left"></i>Linux</a></li>
-                        <li class="active"><a class="text-right" href="build-on-mac.html"><i class="fa fa-apple pull-left"></i>Mac</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div><!--/.navbar-collapse -->
-    </div>
-</nav>
+    </nav>
 
-<div class="jumbotron material-jumbotron">
+    <div class="jumbotron material-jumbotron">
+        <div class="container">
+            <h1>How to build AICP on OS X 10.8.X?</h1>
+            <p>This is a guide to build AICP on OS X Mountain Lion(10.8.X).</p>
+        </div>
+    </div>
+
     <div class="container">
-        <h1>How to build AICP on OS X 10.8.X?</h1>
-        <p>This is a guide to build AICP on OS X Mountain Lion(10.8.X).</p>
-    </div>
-</div>
+        <div class="page-header">
+            <h2>Pre Requirements:</h2>
+        </div>
+        <ol>
+            <li>Go to <strong>App Store</strong> on your OS X and download <strong>Xcode 4</strong>. Once it is installed, open Xcode and go to preferences.
+                <br> There you will find a tab "DOWNLOADS", open it and find <em>"Command line tools"</em>. Click on INSTALL next to it. It will take a few minutes to download and install</li>
+            <li>Make sure you have the <strong>android-sdk</strong> downloaded and adb and fastboot are setup, and they work.
+                <br> It's recommended to place the android-sdk to <code>/usr/local/</code></li>
+        </ol>
+        <div class="page-header">
+            <h3>Initializing the build environment</h3>
+            <p>First we need to set up our OS X to be able to build Android. This needs some extra things compared to, for example, building in Linux. But the main stuff is pretty much the same. So let’s get started then, shall we?</p>
+        </div>
+        <p>Open up Terminal and type</p>
+        <code>java</code>
+        <br>
+        <p>If you don’t have <strong>Java</strong> installed you will get a prompt to install it.</p>
+        <p>Next we will install <strong>homebrew</strong>
+            <mark>(you can also use macports if you like)</mark>
+        </p>
+        <code>ruby <(curl -fsSk https://raw.github.com/mxcl/homebrew/go)</code>
+        <br>
+        <p>Now make sure android-sdk and homebrew are in <strong>$PATH</strong></p>
+        <code>touch ~/.bash_profile && echo "PATH=/usr/local/bin:/usr/local/sbin:$PATH:/usr/local/android-sdk/tools:/usr/local/android-sdk/platform-tools" >> ~/.bash_profile</code>
+        <br>
+        <p>Now run this and see if you need to update anything.</p>
+        <code>brew doctor</code>
+        <br>
+        <p>If you do (and you probably will once a day) type:</p>
+        <code>brew update</code>
+        <br>
+        <p>Now we need to get our
+            <stron>dev packages</stron>
+        </p>
+        <code>brew install git coreutils findutils gnu-sed gnupg pngcrush repo</code>
+        <br>
+        <p>Once that is done, run</p>
+        <code>brew outdated</code>
+        <br>
+        <p>if it shows anything, run</p>
+        <code> brew upgrade</code>
+        <br>
+        <p>Now run this to correct a few symlinks
+            <mark>[Not sure if these are needed anymore]</mark>:</p>
+        <code>ln -s /usr/local/bin/gfind /usr/local/bin/find && ln -s /usr/local/bin/gsed /usr/local/bin/sed</code>
+        <br>
+        <p>Now to create our case sensitive image for our AICP project
+            <mark>[NOTE: the 60g can be changed to anything. It only takes up what it needs but I used 60GB]:</mark>
+        </p>
+        <code>hdiutil create -type SPARSE -fs "Case-sensitive Journaled HFS+" -size 60g -volname "android" -attach ~/Desktop/Android</code>
+        <br>
+        <p>Now to create our working directory</p>
+        <code>cd /Volumes/Android && mkdir aicp && cd aicp</code>
+        <br>
+        <div class="page-header">
+            <h3>Download the Source</h3>
+            <p class="lead">Initializing Repository</p>
+        </div>
+        <ol>
+            <li>Repo initialization:
+                <br>
+                <br>
+                <code>repo init -u https://github.com/AICP/platform_manifest.git -b mm6.0</code>
+            </li>
+            <br>
+            <br>
+            <li>sync repo:
+                <br>
+                <br>
+                <code>repo sync</code>
+            </li>
+        </ol>
+        <div class="page-header">
+            <h3>Building</h3>
+            <p class="lead">After the sync is finished, please read the <a href="http://s.android.com/source/building.html" title="instructions from the Android site">instructions from the Android site</a> on how to build.</p>
+        </div>
+        <ol>
+            <li>Build:
+                <br>
+                <br>
+                <code>. build/envsetup.sh</code>
+                <br>
+                <code>brunch</code>
+            </li>
+            <br>
+            <br>
+            <li>You can also build
+                <mark>(and see how long it took)</mark> for specific devices like this:
+                <br>
+                <br>
+                <code>. build/envsetup.sh</code>
+                <br>
+                <code>time brunch m7</code>
+            </li>
+        </ol>
+        <p>Remember to <code>make clobber</code> every now and then!</p>
 
-<div class="container">
-    <div class="page-header">
-        <h2>Pre Requirements:</h2>
-    </div>
-    <ol>
-        <li>Go to <strong>App Store</strong> on your OS X and download <strong>Xcode 4</strong>. Once it is installed, open Xcode and go to preferences.<br>
-            There you will find a tab "DOWNLOADS", open it and find <em>"Command line tools"</em>. Click on INSTALL next to it. It will take a few minutes to download and install</li>
-        <li>Make sure you have the <strong>android-sdk</strong> downloaded and adb and fastboot are setup, and they work.<br>
-            It's recommended to place the android-sdk to <code>/usr/local/</code></li>
-    </ol>
-    <div class="page-header">
-        <h3>Initializing the build environment</h3>
-        <p>First we need to set up our OS X to be able to build Android. This needs some extra things compared to, for example, building in Linux. But the main stuff is pretty much the same. So let’s get started then, shall we?</p>
-    </div>
-    <p>Open up Terminal and type</p>
-    <code>java</code><br>
-    <p>If you don’t have <strong>Java</strong> installed you will get a prompt to install it.</p>
-    <p>Next we will install <strong>homebrew</strong> <mark>(you can also use macports if you like)</mark></p>
-    <code>ruby <(curl -fsSk https://raw.github.com/mxcl/homebrew/go)</code><br>
-    <p>Now make sure android-sdk and homebrew are in <strong>$PATH</strong></p>
-    <code>touch ~/.bash_profile && echo "PATH=/usr/local/bin:/usr/local/sbin:$PATH:/usr/local/android-sdk/tools:/usr/local/android-sdk/platform-tools" >> ~/.bash_profile</code><br>
-    <p>Now run this and see if you need to update anything.</p>
-    <code>brew doctor</code><br>
-    <p>If you do (and you probably will once a day) type:</p>
-    <code>brew update</code><br>
-    <p>Now we need to get our <stron>dev packages</stron></p>
-    <code>brew install git coreutils findutils gnu-sed gnupg pngcrush repo</code><br>
-    <p>Once that is done, run</p>
-    <code>brew outdated</code><br>
-    <p>if it shows anything, run</p>
-    <code> brew upgrade</code><br>
-    <p>Now run this to correct a few symlinks <mark>[Not sure if these are needed anymore]</mark>:</p>
-    <code>ln -s /usr/local/bin/gfind /usr/local/bin/find && ln -s /usr/local/bin/gsed /usr/local/bin/sed</code><br>
-    <p>Now to create our case sensitive image for our AICP project <mark>[NOTE: the 60g can be changed to anything. It only takes up what it needs but I used 60GB]:</mark></p>
-    <code>hdiutil create -type SPARSE -fs "Case-sensitive Journaled HFS+" -size 60g -volname "android" -attach ~/Desktop/Android</code><br>
-    <p>Now to create our working directory</p>
-    <code>cd /Volumes/Android && mkdir aicp && cd aicp</code><br>
-    <div class="page-header">
-        <h3>Download the Source</h3>
-        <p class="lead">Initializing Repository</p>
-    </div>
-    <ol>
-        <li>Repo initialization:<br><br>
-            <code>repo init -u https://github.com/AICP/platform_manifest.git -b lp5.0</code>
-        </li>
-        <br><br>
-        <li>sync repo:<br><br>
-            <code>repo sync</code>
-        </li>
-    </ol>
-    <div class="page-header">
-        <h3>Building</h3>
-        <p class="lead">After the sync is finished, please read the <a href="http://s.android.com/source/building.html" title="instructions from the Android site">instructions from the Android site</a> on how to build.</p>
-    </div>
-    <ol>
-        <li>Build:<br><br>
-            <code>. build/envsetup.sh</code><br>
-            <code>brunch</code>
-        </li>
-        <br><br>
-        <li>You can also build <mark>(and see how long it took)</mark> for specific devices like this:<br><br>
-            <code>. build/envsetup.sh</code><br>
-            <code>time brunch m7</code>
-        </li>
-    </ol>
-    <p>Remember to <code>make clobber</code> every now and then!</p>
+        <hr>
 
-    <hr>
+        <footer>
+            <p>&copy; AICP 2015</p>
+        </footer>
 
-    <footer>
-        <p>&copy; AICP 2015</p>
-    </footer>
+    </div>
 
-</div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/app.js"></script>
 </body>
+
 </html>
