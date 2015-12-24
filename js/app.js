@@ -6,11 +6,11 @@
 
 var noDataMessage = 'No data provided!',
     noDeviceMessage = 'You have to specify device name!',
-    domain = location.href.replace(location.hash,""),
+    domain = location.href.replace(location.hash, ""),
     config = '/config/devices.json',
     deviceImages = '/imgs/devices/',
     oemCheck = '',
-    proxy = 'https://cors-anywhere.herokuapp.com/',
+    proxy = 'https://crossorigin.me/',
     aicpAPI = proxy + 'http://updates.aicp-rom.com/update.php',
     storage = $.localStorage,
     graphHeight = 30;
@@ -19,23 +19,41 @@ var noDataMessage = 'No data provided!',
 
 /* Colored ConsoleLog */
 
-function log(msg, color){
+function log(msg, color) {
     color = color || "black";
-    bgc = "White";
+    var bgc = "White";
     switch (color) {
-        case "success":  color = "Green";      bgc = "LimeGreen";       break;
-        case "info":     color = "DodgerBlue"; bgc = "Turquoise";       break;
-        case "error":    color = "Red";        bgc = "Black";           break;
-        case "start":    color = "OliveDrab";  bgc = "PaleGreen";       break;
-        case "warning":  color = "Tomato";     bgc = "Black";           break;
-        case "end":      color = "Orchid";     bgc = "MediumVioletRed"; break;
+        case "success":
+            color = "Green";
+            bgc = "LimeGreen";
+            break;
+        case "info":
+            color = "DodgerBlue";
+            bgc = "Turquoise";
+            break;
+        case "error":
+            color = "Red";
+            bgc = "Black";
+            break;
+        case "start":
+            color = "OliveDrab";
+            bgc = "PaleGreen";
+            break;
+        case "warning":
+            color = "Tomato";
+            bgc = "Black";
+            break;
+        case "end":
+            color = "Orchid";
+            bgc = "MediumVioletRed";
+            break;
         default: //noinspection SillyAssignmentJS
             color = color;
     }
 
-    if (typeof msg == "object"){
+    if (typeof msg == "object") {
         console.log(msg);
-    } else if (typeof color == "object"){
+    } else if (typeof color == "object") {
         console.log("%c" + msg, "color: PowderBlue;font-weight:bold; background-color: RoyalBlue;");
         console.log(color);
     } else {
@@ -45,34 +63,37 @@ function log(msg, color){
 
 /* HomePage Rendering of Cards */
 
-homePageRender = function(data){
+homePageRender = function (data) {
 
-    if (!data){ console.log(noDataMessage) } else {
+    if (!data) {
+        console.log(noDataMessage)
+    } else {
 
         /* Sort array by OEMs then by name */
 
-        var asc = true,
-            sortBy = 'OEM',
+        /** @namespace data.devices */
+        var sortBy = 'OEM',
             thenBy = 'name',
-            devices = data.devices.sort(function(a,b){
-                if(a[sortBy] === b[sortBy]){
-                    if(a[sortBy] === b[sortBy]){
+            devices = data.devices.sort(function (a, b) {
+                if (a[sortBy] === b[sortBy]) {
+                    if (a[sortBy] === b[sortBy]) {
 
-                        if(a[thenBy] == b[thenBy]){
+                        if (a[thenBy] == b[thenBy]) {
                             return 0;
-                        } else if (a[thenBy] < b[thenBy]){
+                        } else if (a[thenBy] < b[thenBy]) {
                             return -1;
-                        } else if (a[thenBy] > b[thenBy]){
+                        } else if (a[thenBy] > b[thenBy]) {
                             return 1;
                         }
 
                     }
-                } else if (a[sortBy] < b[sortBy]){
+                } else if (a[sortBy] < b[sortBy]) {
                     return -1;
-                } else if (a[sortBy] > b[sortBy]){
+                } else if (a[sortBy] > b[sortBy]) {
                     return 1;
                 }
-            });
+            }),
+            i;
 
         for (i = 0; i < devices.length; i++) {
 
@@ -95,7 +116,7 @@ homePageRender = function(data){
 
             /* Check if new OEM starts and add heading */
 
-            if (oemCheck !== devices[i].OEM){
+            if (oemCheck !== devices[i].OEM) {
 
                 /* Make scroll buttons */
                 $('#devicechoose').append('<a class="btn btn-default btn-lg" href="#' + devices[i].OEM.toLowerCase() + '" role="button">' + devices[i].OEM + '</a>');
@@ -118,15 +139,19 @@ homePageRender = function(data){
 
 /* Make Modal with data provided */
 
-makeModal = function(data, deviceName, deviceHeader){
+makeModal = function (data, deviceName, deviceHeader) {
 
-    if (!data){ log(noDataMessage,'error') } else {
+    if (!data) {
+        log(noDataMessage, 'error')
+    } else {
 
         var updates = data.updates,
             deviceTable = '',
-            sizes = $.map(updates, function(updates){ return updates.size; }),
-            maxSize = Math.max.apply(this,sizes),
-            minSize = Math.min.apply(this,sizes),
+            sizes = $.map(updates, function (updates) {
+                return updates.size;
+            }),
+            maxSize = Math.max.apply(this, sizes),
+            minSize = Math.min.apply(this, sizes),
             difference = maxSize - minSize;
 
         for (i = 0; i < updates.length; i++) {
@@ -135,19 +160,19 @@ makeModal = function(data, deviceName, deviceHeader){
 
             var currentSize = updates[i].size;
 
-            if (i < 12){
+            if (i < 12) {
 
                 $('.graph .bar' + i).height((maxSize - currentSize) * (difference / graphHeight) + 20).text(currentSize);
             }
 
             var tr = '<tr data-url="' + updates[i].url + '">',
                 date = updates[i].name.slice(-12, -4),
-                year = date.slice(0,4),
-                month = date.slice(4,6),
-                day = date.slice(6,8),
+                year = date.slice(0, 4),
+                month = date.slice(4, 6),
+                day = date.slice(6, 8),
                 time = day + '/' + month + '/' + year;
 
-            if (updates[i].version.toLowerCase().indexOf('experimental') >= 0){
+            if (updates[i].version.toLowerCase().indexOf('experimental') >= 0) {
                 tr = '<tr data-url="' + updates[i].url + '" class="danger">';
             } else if (updates[i].version.toLowerCase().indexOf('nightly') >= 0) {
                 tr = '<tr data-url="' + updates[i].url + '" class="warning">';
@@ -169,8 +194,8 @@ makeModal = function(data, deviceName, deviceHeader){
         }
 
         deviceTable = '<div class="table-responsive"><table class="table table-condensed table-hover">' +
-        '<tr><th>Date</th><th>Version</th><th>Filename</th><th>Size</th><th>md5</th><th>D/L</th></tr>' +
-        deviceTable + '</table></div>';
+            '<tr><th>Date</th><th>Version</th><th>Filename</th><th>Size</th><th>md5</th><th>D/L</th></tr>' +
+            deviceTable + '</table></div>';
 
         $('#modal').modal().find('.modal-body').html(deviceTable);
         $('#downloadModal').html(deviceHeader);
@@ -184,9 +209,9 @@ makeModal = function(data, deviceName, deviceHeader){
 
 /* Get Data from local storage */
 
-getLocalStorage = function(devicename){
+getLocalStorage = function (devicename) {
 
-    if (!devicename){
+    if (!devicename) {
 
         log(noDeviceMessage, 'error');
         return false;
@@ -204,22 +229,22 @@ getLocalStorage = function(devicename){
 
 /* Store data locally */
 
-storeLocally = function(devicename, data){
+storeLocally = function (devicename, data) {
 
-    if (data && devicename){
+    if (data && devicename) {
 
-        storage.set(devicename,data);
-        storage.set(devicename + '-timestamp',$.now());
+        storage.set(devicename, data);
+        storage.set(devicename + '-timestamp', $.now());
 
         log('Stored info of ' + devicename + ' to localStorage', 'success');
         return true;
 
-    } else if (!devicename){
+    } else if (!devicename) {
 
         log(noDeviceMessage, 'error');
         return false;
 
-    } else if (!data){
+    } else if (!data) {
 
         log(noDataMessage, 'error');
         return false;
@@ -229,9 +254,11 @@ storeLocally = function(devicename, data){
 
 /* Get fresh data from server and make modal */
 
-modalWithNewData = function(deviceToGrab, deviceHeader){
+modalWithNewData = function (deviceToGrab, deviceHeader) {
 
-    if (!deviceToGrab){ log(deviceToGrab, 'error') } else {
+    if (!deviceToGrab) {
+        log(deviceToGrab, 'error')
+    } else {
 
         $.ajax({
             url: aicpAPI,
@@ -267,20 +294,20 @@ modalWithNewData = function(deviceToGrab, deviceHeader){
 
 /* OTA page only */
 
-if ($('body').hasClass('ota')){
+if ($('body').hasClass('ota')) {
 
-    $.getJSON(domain + config, function(data){
+    $.getJSON(domain + config, function (data) {
         homePageRender(data);
     });
 
-    $(document).on('click', '.modal-btn', function (){
+    $(document).on('click', '.modal-btn', function () {
 
         var deviceToGrab = $(this).attr('data-codename'),
             deviceHeader = $(this).find('.caption').html(),
             localData = getLocalStorage(deviceToGrab),
             deviceDataLastChecked = $.now() - storage.get(deviceToGrab + '-timestamp');
 
-        if (localData != null && (deviceDataLastChecked != undefined || deviceDataLastChecked < 3600000)){ /* One hour is 3600000 ms */
+        if (localData != null && (deviceDataLastChecked != undefined || deviceDataLastChecked < 3600000)) { /* One hour is 3600000 ms */
 
             makeModal(localData, deviceToGrab, deviceHeader);
 
@@ -292,7 +319,7 @@ if ($('body').hasClass('ota')){
 
     });
 
-    $(document).on('click', '.modal tr .dload', function(){
+    $(document).on('click', '.modal tr .dload', function () {
         var downloadLink = $(this).parent().attr('data-url');
         window.open(downloadLink, '_blank')
     });
