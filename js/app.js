@@ -145,6 +145,7 @@ makeModal = function (data, deviceName, deviceHeader) {
         log(noDataMessage, 'error')
     } else {
 
+        /** @namespace data.updates */
         var updates = data.updates,
             deviceTable = '',
             sizes = $.map(updates, function (updates) {
@@ -152,7 +153,8 @@ makeModal = function (data, deviceName, deviceHeader) {
             }),
             maxSize = Math.max.apply(this, sizes),
             minSize = Math.min.apply(this, sizes),
-            difference = maxSize - minSize;
+            difference = maxSize - minSize,
+            i;
 
         for (i = 0; i < updates.length; i++) {
 
@@ -272,6 +274,9 @@ modalWithNewData = function (deviceToGrab, deviceHeader) {
             xhrFields: {
                 onprogress: function (e) {
 
+                    /** @namespace e.lengthComputable */
+                    /** @namespace e.total */
+                    /** @namespace e.loaded */
                     if (e.lengthComputable) {
                         log(e.loaded / e.total * 100 + '%');
                     }

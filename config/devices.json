@@ -482,6 +482,12 @@
       "name": "Xperia Z",
       "band": "GSM",
       "codename": "yuga"
+    },
+    {
+      "OEM": "Samsung",
+      "name": "Galaxy S3",
+      "band": "LTE",
+      "codename": "i9300"
     }
   ]
 }
