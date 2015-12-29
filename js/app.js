@@ -140,9 +140,10 @@ homePageRender = function (data) {
 /* Make Modal with data provided */
 
 makeModal = function (data, deviceName, deviceHeader) {
-
-    if (!data) {
-        log(noDataMessage, 'error')
+    if (!data || data === '' || data.error === 'Nothing found') {
+        log(noDataMessage, 'error');
+        $('#modal').modal().find('.modal-body').html('No data provided');
+        $('#downloadModal').html('<h5>No OTAs found, sorry!</h5>');
     } else {
 
         /** @namespace data.updates */
