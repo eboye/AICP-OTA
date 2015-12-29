@@ -168,7 +168,7 @@ makeModal = function (data, deviceName, deviceHeader) {
                 $('.graph .bar' + i).height((maxSize - currentSize) * (difference / graphHeight) + 20).text(currentSize);
             }
 
-            var tr = '<tr data-url="' + updates[i].url + '">',
+            var tr = '<tr data-toggle="tooltip" data-placement="top" title="filename: ' + updates[i].name + '" data-url="' + updates[i].url + '"',
                 date = updates[i].name.slice(-12, -4),
                 year = date.slice(0, 4),
                 month = date.slice(4, 6),
@@ -176,20 +176,19 @@ makeModal = function (data, deviceName, deviceHeader) {
                 time = day + '/' + month + '/' + year;
 
             if (updates[i].version.toLowerCase().indexOf('experimental') >= 0) {
-                tr = '<tr data-url="' + updates[i].url + '" class="danger">';
+                tr += ' class="danger">';
             } else if (updates[i].version.toLowerCase().indexOf('nightly') >= 0) {
-                tr = '<tr data-url="' + updates[i].url + '" class="warning">';
+                tr += ' class="warning">';
             } else if (updates[i].version.toLowerCase().indexOf('release') >= 0) {
-                tr = '<tr data-url="' + updates[i].url + '" class="success">';
+                tr = ' class="success">';
             }
 
             var updateRow = tr +
                 '<td class="dload"><strong>' + time + '</strong></td>' +
                 '<td class="dload">' + updates[i].version + '</td>' +
-                '<td class="dload">' + updates[i].name + '</td>' +
                 '<td class="dload"><strong>' + currentSize + ' MB</strong></td>' +
                 '<td class="dload">' + updates[i].md5 + '</td>' +
-                '<td><a href="' + updates[i].url + '" class="btn btn-sm btn-default">D/L</a></td>' +
+                '<td><a href="' + updates[i].url + '" class="btn btn-sm btn-default">Download</a></td>' +
                 '</tr>';
 
             deviceTable = deviceTable + updateRow;
@@ -197,11 +196,12 @@ makeModal = function (data, deviceName, deviceHeader) {
         }
 
         deviceTable = '<div class="table-responsive"><table class="table table-condensed table-hover">' +
-            '<tr><th>Date</th><th>Version</th><th>Filename</th><th>Size</th><th>md5</th><th>D/L</th></tr>' +
+            '<tr><th>Date</th><th>Version</th><th>Size</th><th>md5</th><th>Download</th></tr>' +
             deviceTable + '</table></div>';
 
         $('#modal').modal().find('.modal-body').html(deviceTable);
         $('#downloadModal').html(deviceHeader);
+        $('[data-toggle="tooltip"]').tooltip();
 
     }
 
