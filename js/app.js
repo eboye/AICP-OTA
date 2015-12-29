@@ -101,7 +101,7 @@ homePageRender = function (data) {
 
             var deviceThumb = '<div data-codename="' + devices[i].codename + '" class="modal-btn col-xs-12 col-sm-6 col-md-3">' +
                     '<div class="thumbnail">' +
-                    '<img src="' + domain + deviceImages + devices[i].codename + '.jpg" alt="">' +
+                    '<img src="' + domain + deviceImages + devices[i].codename + '.jpg" alt="' + devices[i].codename + '">' +
                     '<div class="caption">' +
                     '<h5>' + devices[i].name + '<small><br>made by <strong>' + devices[i].OEM + '</strong></small></h5>' +
                     '<h6>codename: <span class="label label-primary">' + devices[i].codename + '</span></h6>' +
