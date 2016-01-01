@@ -323,6 +323,8 @@ if ($('body').hasClass('ota')) {
 
         }
 
+        _gaq.push(['_trackPageview', deviceToGrab]);
+
     });
 
     $(document).on('click', '.modal tr .dload', function () {
