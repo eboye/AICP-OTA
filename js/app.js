@@ -322,7 +322,8 @@ if ($('body').hasClass('ota')) {
             modalWithNewData(deviceToGrab, deviceHeader);
 
         }
-
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-71822266-1']);
         _gaq.push(['_trackPageview', deviceToGrab]);
 
     });
