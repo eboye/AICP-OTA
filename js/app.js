@@ -189,6 +189,7 @@ makeModal = function (data, deviceName, deviceHeader) {
                 '<td class="dload"><strong>' + currentSize + ' MB</strong></td>' +
                 '<td class="dload">' + updates[i].md5 + '</td>' +
                 '<td><a href="' + updates[i].url + '" class="btn btn-sm btn-default">Download</a></td>' +
+                '<td><a href="' + updates[i].url + '.html" class="btn btn-sm btn-default">Changelog</a></td>' +
                 '</tr>';
 
             deviceTable = deviceTable + updateRow;
@@ -196,7 +197,7 @@ makeModal = function (data, deviceName, deviceHeader) {
         }
 
         deviceTable = '<div class="table-responsive"><table class="table table-condensed table-hover">' +
-            '<tr><th>Date</th><th>Version</th><th>Size</th><th>md5</th><th>Download</th></tr>' +
+            '<tr><th>Date</th><th>Version</th><th>Size</th><th>md5</th><th>Download</th><th>Changelog</th></tr>' +
             deviceTable + '</table></div>';
 
         $('#modal').modal().find('.modal-body').html(deviceTable);
