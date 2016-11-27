@@ -1,36 +1,36 @@
-body{
+body {
     padding-top: 64px;
 }
 
-.material-jumbotron{
+.material-jumbotron {
     background-image: url("../imgs/material_back.png");
     background-size: cover;
     color: #fff;
 }
 
-.material-jumbotron h1{
+.material-jumbotron h1 {
     color: #fff;
 }
 
-.navbar-brand{
+.navbar-brand {
     padding: 0 15px;
 }
 
-.navbar-brand>img{
+.navbar-brand > img {
     display: inline-block;
     max-height: 60px;
 }
 
-.navbar .fa{
+.navbar .fa {
     font-size: 1.5em;
     margin-right: 10px;
 }
 
-.navbar .fa.fa-google-plus{
+.navbar .fa.fa-google-plus {
     vertical-align: middle;
 }
 
-.navbar .menu-title{
+.navbar .menu-title {
     padding: 3px 20px;
     font-weight: bold;
     cursor: default;
@@ -45,27 +45,27 @@ body{
     margin-top: -80px;
 }
 
-.modal-btn{
+.modal-btn {
     cursor: pointer;
 }
 
-.modal table tr{
+.modal table tr {
     cursor: pointer;
 }
 
-code{
+code {
     word-wrap: normal;
     word-break: break-all;
 }
 
 /* Graph */
 
-.graph{
+.graph {
     background-color: #2196f3;
     height: 50px;
 }
 
-.graph div{
+.graph div {
     background-color: #fff;
     color: #2196f3;
 }
@@ -73,14 +73,14 @@ code{
 /* Responsive Button Group */
 
 @media (max-width: 1201px) {
-    .btn-group-responsive .btn{
+    .btn-group-responsive .btn {
         padding: 10px 5px;
         font-size: 15px;
     }
 }
 
 @media (max-width: 991px) {
-    .btn-group-responsive .btn{
+    .btn-group-responsive .btn {
         padding: 10px 5px;
         font-size: 12px;
     }
@@ -91,6 +91,7 @@ code{
     .btn-group-responsive .pull-right {
         float: none;
     }
+
     .btn-group-responsive .btn {
         display: block;
         width: calc(50% - 10px);
@@ -100,6 +101,7 @@ code{
         font-size: 17px;
         float: left;
     }
+
     .btn-group-responsive .btn:last-child {
         margin-bottom: 0;
     }
@@ -111,4 +113,8 @@ code{
         margin: 0 0 10px;
         float: none;
     }
+}
+
+#devicechoose .btn {
+    padding: 10px 0;
 }
