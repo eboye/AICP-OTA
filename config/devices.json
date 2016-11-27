@@ -1,354 +1,379 @@
-{"devices": [
-  {
-    "OEM": "Sony",
-    "name": "Xperia Z1 Mini",
-    "band": "GSM",
-    "codename": "amami"
-  },
-  {
-    "OEM": "OnePlus",
-    "name": "One",
-    "band": "GSM",
-    "codename": "bacon"
-  },
-  {
-    "OEM": "Samsung",
-    "name": "Galaxy S3",
-    "network": "Sprint",
-    "band": "CDMA",
-    "codename": "d2spr"
-  },
-  {
-    "OEM": "Samsung",
-    "name": "Galaxy S3",
-    "network": "Verizon",
-    "band": "GSM",
-    "codename": "d2vzw"
-  },
-  {
-    "OEM": "LG",
-    "name": "G2",
-    "network": "AT&T",
-    "band": "GSM",
-    "codename": "d800"
-  },
-  {
-    "OEM": "LG",
-    "name": "G2",
-    "network": "T-Mobile",
-    "band": "GSM",
-    "codename": "d801"
-  },
-  {
-    "OEM": "LG",
-    "name": "G2",
-    "band": "GSM",
-    "codename": "d802"
-  },
-  {
-    "OEM": "LG",
-    "name": "G2",
-    "network": "Rogers",
-    "band": "GSM",
-    "codename": "d803"
-  },
-  {
-    "OEM": "LG",
-    "name": "G3",
-    "network": "AT&T",
-    "band": "GSM",
-    "codename": "d850"
-  },
-  {
-    "OEM": "LG",
-    "name": "G3",
-    "network": "T-Mobile",
-    "band": "GSM",
-    "codename": "d851"
-  },
-  {
-    "OEM": "LG",
-    "name": "G3",
-    "network": "Rogers",
-    "band": "GSM",
-    "codename": "d852"
-  },
-  {
-    "OEM": "LG",
-    "name": "G3",
-    "band": "GSM",
-    "codename": "d855"
-  },
-  {
-    "OEM": "Asus",
-    "name": "Nexus 7 2013",
-    "band": "LTE",
-    "codename": "deb"
-  },
-  {
-    "OEM": "Motorola",
-    "name": "Moto G 2013",
-    "band": "GSM",
-    "codename": "falcon"
-  },
-  {
-    "OEM": "Oppo",
-    "name": "Find 7",
-    "band": "GSM",
-    "codename": "find7"
-  },
-  {
-    "OEM": "Oppo",
-    "name": "Find 7",
-    "band": "GSM",
-    "codename": "find7ext"
-  },
-  {
-    "OEM": "Oppo",
-    "name": "Find 7",
-    "band": "GSM",
-    "codename": "find7s"
-  },
-  {
-    "OEM": "Asus",
-    "name": "Nexus 7 2013",
-    "band": "WiFi",
-    "codename": "flo"
-  },
-  {
-    "OEM": "HTC",
-    "name": "Nexus 9",
-    "band": "GSM",
-    "codename": "flounder"
-  },
-  {
-    "OEM": "Asus",
-    "name": "Nexus 7",
-    "band": "WiFi",
-    "codename": "grouper"
-  },
-  {
-    "OEM": "LG",
-    "name": "Nexus 5",
-    "band": "GSM",
-    "codename": "hammerhead"
-  },
-  {
-    "OEM": "LG",
-    "name": "Nexus 5 CAF",
-    "band": "GSM",
-    "codename": "hammerheadcaf"
-  },
-  {
-    "OEM": "Samsung",
-    "name": "Galaxy Note 3",
-    "band": "GSM",
-    "codename": "hlte"
-  },
-  {
-    "OEM": "Samsung",
-    "name": "Galaxy Note 3",
-    "network": "Sprint",
-    "band": "GSM",
-    "codename": "hltespr"
-  },
-  {
-    "OEM": "Samsung",
-    "name": "Galaxy Note 3",
-    "network": "T-Mobile",
-    "band": "CDMA",
-    "codename": "hltetmo"
-  },
-  {
-    "OEM": "Sony",
-    "name": "Xperia Z1",
-    "band": "GSM",
-    "codename": "honami"
-  },
-  {
-    "OEM": "Samsung",
-    "name": "Galaxy S4",
-    "network": "Sprint",
-    "band": "GSM",
-    "codename": "jfltespr"
-  },
-  {
-    "OEM": "Samsung",
-    "name": "Galaxy S4",
-    "network": "T-Mobile",
-    "band": "GSM",
-    "codename": "jfltetmo"
-  },
-  {
-    "OEM": "Samsung",
-    "name": "Galaxy S4",
-    "network": "Verizon",
-    "band": "GSM",
-    "codename": "jfltevzw"
-  },
-  {
-    "OEM": "Samsung",
-    "name": "Galaxy S4",
-    "band": "GSM",
-    "codename": "jfltexx"
-  },
-  {
-    "OEM": "Samsung",
-    "name": "Galaxy S5",
-    "band": "GSM",
-    "codename": "klte"
-  },
-  {
-    "OEM": "Samsung",
-    "name": "Galaxy S5",
-    "network": "Sprint",
-    "band": "GSM",
-    "codename": "kltespr"
-  },
-  {
-    "OEM": "LG",
-    "name": "G2",
-    "network": "Sprint",
-    "band": "GSM",
-    "codename": "ls980"
-  },
-  {
-    "OEM": "LG",
-    "name": "G3",
-    "network": "Sprint",
-    "band": "GSM",
-    "codename": "ls990"
-  },
-  {
-    "OEM": "HTC",
-    "name": "One M7",
-    "band": "GSM",
-    "codename": "m7"
-  },
-  {
-    "OEM": "HTC",
-    "name": "One M7",
-    "network": "Verizon",
-    "band": "GSM",
-    "codename": "m7vzw"
-  },
-  {
-    "OEM": "HTC",
-    "name": "One One X",
-    "band": "GSM",
-    "codename": "endeavoru"
-  },
-  {
-    "OEM": "HTC",
-    "name": "One M8",
-    "band": "GSM",
-    "codename": "m8"
-  },
-  {
-    "OEM": "LG",
-    "name": "Nexus 4",
-    "band": "GSM",
-    "codename": "mako"
-  },
-  {
-    "OEM": "Amazon",
-    "name": "Kindle Fire",
-    "band": "WiFi",
-    "codename": "otterx"
-  },
-  {
-    "OEM": "Samsung",
-    "name": "Galaxy S4 Mini",
-    "band": "GSM",
-    "codename": "serrano3gxx"
-  },
-  {
-    "OEM": "Samsung",
-    "name": "Galaxy S4 Mini",
-    "band": "GSM",
-    "codename": "serranoltexx"
-  },
-  {
-    "OEM": "Motorola",
-    "name": "Nexus 6",
-    "band": "GSM",
-    "codename": "shamu"
-  },
-  {
-    "OEM": "Sony",
-    "name": "Xperia Z2",
-    "band": "GSM",
-    "codename": "sirius"
-  },
-  {
-    "OEM": "Samsung",
-    "name": "Galaxy Note 2",
-    "band": "LTE",
-    "codename": "t0lte"
-  },
-  {
-    "OEM": "Samsung",
-    "name": "Galaxy S3",
-    "band": "LTE",
-    "codename": "i9305"
-  },
-  {
-    "OEM": "Asus",
-    "name": "Nexus 7",
-    "band": "LTE",
-    "codename": "tilapia"
-  },
-  {
-    "OEM": "Motorola",
-    "name": "Moto G",
-    "band": "GSM",
-    "codename": "titan"
-  },
-  {
-    "OEM": "Sony",
-    "name": "Xperia Z Ultra",
-    "band": "GSM",
-    "codename": "togari"
-  },
-  {
-    "OEM": "Samsung",
-    "name": "Galaxy Note 4",
-    "network": "Sprint",
-    "band": "GSM",
-    "codename": "trltespr"
-  },
-  {
-    "OEM": "Samsung",
-    "name": "Galaxy Note 4",
-    "network": "T-Mobile",
-    "band": "GSM",
-    "codename": "trltetmo"
-  },
-  {
-    "OEM": "Samsung",
-    "name": "Galaxy Note 4",
-    "band": "GSM",
-    "codename": "trltexx"
-  },
-  {
-    "OEM": "LG",
-    "name": "G2",
-    "network": "Verizon",
-    "band": "GSM",
-    "codename": "vs980"
-  },
-  {
-    "OEM": "LG",
-    "name": "G3",
-    "network": "Verizon",
-    "band": "GSM",
-    "codename": "vs985"
-  },
-  {
-    "OEM": "Sony",
-    "name": "Xperia SP",
-    "band": "GSM",
-    "codename": "huashan"
-  }
-
-]}
+{
+  "devices": [
+    {
+      "OEM": "Sony",
+      "name": "Xperia Z1 Mini",
+      "codename": "amami"
+    },
+    {
+      "OEM": "OnePlus",
+      "name": "1",
+      "codename": "bacon"
+    },
+    {
+      "OEM": "Samsung",
+      "name": "Galaxy S3",
+      "codename": "d2spr"
+    },
+    {
+      "OEM": "Samsung",
+      "name": "Galaxy S3",
+      "codename": "d2vzw"
+    },
+    {
+      "OEM": "LG",
+      "name": "G2",
+      "codename": "d800"
+    },
+    {
+      "OEM": "LG",
+      "name": "G2",
+      "codename": "d801"
+    },
+    {
+      "OEM": "LG",
+      "name": "G2",
+      "codename": "d802"
+    },
+    {
+      "OEM": "LG",
+      "name": "G2",
+      "codename": "d803"
+    },
+    {
+      "OEM": "LG",
+      "name": "G3",
+      "codename": "d850"
+    },
+    {
+      "OEM": "LG",
+      "name": "G3",
+      "codename": "d851"
+    },
+    {
+      "OEM": "LG",
+      "name": "G3",
+      "codename": "d852"
+    },
+    {
+      "OEM": "LG",
+      "name": "G3",
+      "codename": "d855"
+    },
+    {
+      "OEM": "Google",
+      "name": "Nexus 7 2013",
+      "codename": "deb"
+    },
+    {
+      "OEM": "Motorola",
+      "name": "Moto G 2013",
+      "codename": "falcon"
+    },
+    {
+      "OEM": "Google",
+      "name": "Nexus 7 2013",
+      "codename": "flo"
+    },
+    {
+      "OEM": "Google",
+      "name": "Nexus 9",
+      "codename": "flounder"
+    },
+    {
+      "OEM": "Google",
+      "name": "Nexus 5",
+      "codename": "hammerhead"
+    },
+    {
+      "OEM": "Google",
+      "name": "Nexus 5 CAF",
+      "codename": "hammerheadcaf"
+    },
+    {
+      "OEM": "Samsung",
+      "name": "Galaxy S4",
+      "codename": "jfltevzw"
+    },
+    {
+      "OEM": "Samsung",
+      "name": "Galaxy S4",
+      "codename": "jfltexx"
+    },
+    {
+      "OEM": "Samsung",
+      "name": "Galaxy S5",
+      "codename": "klte"
+    },
+    {
+      "OEM": "LG",
+      "name": "G2",
+      "codename": "ls980"
+    },
+    {
+      "OEM": "LG",
+      "name": "G3",
+      "codename": "ls990"
+    },
+    {
+      "OEM": "HTC",
+      "name": "One M7",
+      "codename": "m7"
+    },
+    {
+      "OEM": "HTC",
+      "name": "One M8",
+      "codename": "m8"
+    },
+    {
+      "OEM": "Google",
+      "name": "Nexus 4",
+      "codename": "mako"
+    },
+    {
+      "OEM": "Samsung",
+      "name": "Galaxy S4 Mini",
+      "codename": "serrano3gxx"
+    },
+    {
+      "OEM": "Samsung",
+      "name": "Galaxy S4 Mini",
+      "codename": "serranoltexx"
+    },
+    {
+      "OEM": "Google",
+      "name": "Nexus 6",
+      "codename": "shamu"
+    },
+    {
+      "OEM": "Motorola",
+      "name": "Moto G",
+      "codename": "titan"
+    },
+    {
+      "OEM": "Sony",
+      "name": "Xperia Z Ultra",
+      "codename": "togari"
+    },
+    {
+      "OEM": "LG",
+      "name": "G2",
+      "codename": "vs980"
+    },
+    {
+      "OEM": "LG",
+      "name": "G3",
+      "codename": "vs985"
+    },
+    {
+      "OEM": "Sony",
+      "name": "Xperia SP",
+      "codename": "huashan"
+    },
+    {
+      "OEM": "Google",
+      "name": "Nexus 6P",
+      "codename": "angler"
+    },
+    {
+      "OEM": "Google",
+      "name": "Nexus 5X",
+      "codename": "bullhead"
+    },
+    {
+      "OEM": "Xiaomi",
+      "name": "Mi3",
+      "codename": "cancro"
+    },
+    {
+      "OEM": "Motorola",
+      "name": "Moto X Pure 2015",
+      "codename": "clark"
+    },
+    {
+      "OEM": "Motorola",
+      "name": "Moto E",
+      "codename": "condor"
+    },
+    {
+      "OEM": "Xiaomi",
+      "name": "Redmi Note 4G",
+      "codename": "dior"
+    },
+    {
+      "OEM": "Nextbit",
+      "name": "Robin",
+      "codename": "ether"
+    },
+    {
+      "OEM": "LG",
+      "name": "G2 Mini",
+      "codename": "g2m"
+    },
+    {
+      "OEM": "LG",
+      "name": "Optimus G",
+      "codename": "geehrc"
+    },
+    {
+      "OEM": "Motorola",
+      "name": "Moto X 2013",
+      "codename": "ghost"
+    },
+    {
+      "OEM": "Google",
+      "name": "Nexus 7 2013",
+      "codename": "grouper"
+    },
+    {
+      "OEM": "LG",
+      "name": "G4 (T-Mobile)",
+      "codename": "h811"
+    },
+    {
+      "OEM": "LG",
+      "name": "G4",
+      "codename": "h815"
+    },
+    {
+      "OEM": "HTC",
+      "name": "One M9 (GSM)",
+      "codename": "himaul"
+    },
+    {
+      "OEM": "Samsung",
+      "name": "Galaxy S2",
+      "codename": "i9100"
+    },
+    {
+      "OEM": "Samsung",
+      "name": "Galaxy S3",
+      "codename": "i9300"
+    },
+    {
+      "OEM": "Xiaomi",
+      "name": "Redmi 3/Prime",
+      "codename": "ido"
+    },
+    {
+      "OEM": "Xiaomi",
+      "name": "Redmi Note 3",
+      "codename": "kenzo"
+    },
+    {
+      "OEM": "YU",
+      "name": "Yuphoria",
+      "codename": "lettuce"
+    },
+    {
+      "OEM": "Motorola",
+      "name": "Moto X Play",
+      "codename": "lux"
+    },
+    {
+      "OEM": "Google",
+      "name": "Nexus 10",
+      "codename": "manta"
+    },
+    {
+      "OEM": "Samsung",
+      "name": "Galaxy Note 2",
+      "codename": "manta"
+    },
+    {
+      "OEM": "Samsung",
+      "name": "Galaxy Note 2 (GSM Non-LTE)",
+      "codename": "n7100"
+    },
+    {
+      "OEM": "OnePlus",
+      "name": "2",
+      "codename": "oneplus2"
+    },
+    {
+      "OEM": "OnePlus",
+      "name": "3",
+      "codename": "oneplus3"
+    },
+    {
+      "OEM": "OnePlus",
+      "name": "X",
+      "codename": "onyx"
+    },
+    {
+      "OEM": "Motorola",
+      "name": "Moto G 2015",
+      "codename": "osprey"
+    },
+    {
+      "OEM": "Motorola",
+      "name": "Moto E 2015",
+      "codename": "otus"
+    },
+    {
+      "OEM": "Motorola",
+      "name": "Moto G 4G",
+      "codename": "peregrine"
+    },
+    {
+      "OEM": "HTC",
+      "name": "10",
+      "codename": "pme"
+    },
+    {
+      "OEM": "Google",
+      "name": "Android One 2nd Gen",
+      "codename": "seed"
+    },
+    {
+      "OEM": "Google",
+      "name": "Android One 3nd Gen",
+      "codename": "shamrock"
+    },
+    {
+      "OEM": "Nvidia",
+      "name": "Shield Tablet",
+      "codename": "shieldtablet"
+    },
+    {
+      "OEM": "Google",
+      "name": "Android One",
+      "codename": "sprout4"
+    },
+    {
+      "OEM": "Motorola",
+      "name": "Moto E 4G 2015",
+      "codename": "surnia"
+    },
+    {
+      "OEM": "Motorola",
+      "name": "Moto G 4G 2014",
+      "codename": "thea"
+    },
+    {
+      "OEM": "YU",
+      "name": "Yureka",
+      "codename": "tomato"
+    },
+    {
+      "OEM": "Motorola",
+      "name": "Moto X 2014",
+      "codename": "victara"
+    },
+    {
+      "OEM": "Xiaomi",
+      "name": "Redmi 2",
+      "codename": "wt88047"
+    },
+    {
+      "OEM": "Asus",
+      "name": "Zenphone 2 (720p)",
+      "codename": "z008"
+    },
+    {
+      "OEM": "Asus",
+      "name": "Zenfone 2",
+      "codename": "z00a"
+    }
+  ]
+}
