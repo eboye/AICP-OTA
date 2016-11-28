@@ -143,8 +143,10 @@
         /* Make Modal with data provided */
 
         makeModal = function (data, deviceName, deviceHeader) {
-            if (!data) {
+            if (!data || data === '' || data.error === 'Nothing found') {
                 log(noDataMessage, 'error');
+                $('#modal').modal().find('.modal-body').html('No data provided');
+                $('#downloadModal').html('<h5>No OTAs found, sorry!</h5>');
             } else {
 
                 var updates = data.updates,
@@ -288,12 +290,8 @@
                         }
                     },
                     success: function (data) {
-                        if (data.error === 'Nothing found') {
-                            alert('Sorry, we do not support this device anymore');
-                        } else {
-                            makeModal(data, deviceToGrab, deviceHeader);
-                            storeLocally(deviceToGrab, data);
-                        }
+                        makeModal(data, deviceToGrab, deviceHeader);
+                        storeLocally(deviceToGrab, data);
 
                     },
                     error: function (e) {
@@ -329,6 +327,9 @@
                 modalWithNewData(deviceToGrab, deviceHeader);
 
             }
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-71822266-1']);
+            _gaq.push(['_trackPageview', deviceToGrab]);
 
         });
 
