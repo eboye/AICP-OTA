@@ -12,11 +12,6 @@ body {
     color: #fff;
 }
 
-#devicechoose a.btn {
-    font-size: 14px;
-    padding: 10px 12px;
-}
-
 .navbar-brand {
     padding: 0 15px;
 }
@@ -118,4 +113,8 @@ code {
         margin: 0 0 10px;
         float: none;
     }
+}
+
+#devicechoose .btn {
+    padding: 10px 0;
 }

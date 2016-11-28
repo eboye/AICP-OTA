@@ -28,15 +28,9 @@
     <title>AICP OTA</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/paper/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/paper/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link href="css/style.css" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
     <script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
@@ -70,12 +64,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="http://eboye.github.io/AICP-OTA/"><img src="imgs/logo.png" alt="AICP Logo"/>
+            <a class="navbar-brand" href="https://eboye.github.io/AICP-OTA/"><img src="imgs/logo.png" alt="AICP Logo"/>
                 AICP DIY Build</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="http://eboye.github.io/AICP-OTA/"><i class="fa fa-download"></i>OTA updates <span
+                <li><a href="https://eboye.github.io/AICP-OTA/"><i class="fa fa-download"></i>OTA updates <span
                         class="sr-only">(current)</span></a></li>
                 <li><a target="_blank" href="https://plus.google.com/u/0/communities/101008638920580274588"><i
                         class="fa fa-google-plus"></i>Google+ Community</a></li>
@@ -113,7 +107,7 @@
 <div class="container">
     <div class="page-header">
         <h2>Always use 64-bit System!</h2>
-        <p class="lead">Tested on <strong>Ubuntu Linux 15.10 x64</strong></p>
+        <p class="lead">Tested on <strong>Linux Mint 16 Cinnamon x64</strong></p>
     </div>
 
     <ol>
@@ -126,22 +120,26 @@
         </li>
         <br>
         <br>
-        <li>Then type following to install correct Java 7
+        <li>Then type following to install correct Java 6
             <mark>(say OK to prompts and stuff)</mark>
             :
             <br>
             <br>
             <code>sudo add-apt-repository ppa:webupd8team/java && sudo apt-get update && sudo apt-get install
-                oracle-java7-installer</code>
+                oracle-java6-installer</code>
         </li>
         <br>
         <br>
         <li>Now type the following to install needed utilities:
             <br>
             <br>
-            <code>sudo apt-get install openjdk-7-jdk git ccache automake lzop bison gperf build-essential zip curl
-                zlib1g-dev zlib1g-dev:i386 g++-multilib python-networkx libxml2-utils bzip2 libbz2-dev libbz2-1.0
-                libghc-bzlib-dev squashfs-tools pngcrush schedtool dpkg-dev liblz4-tool make optipng</code>
+            <code>sudo apt-get install git-core gnupg ccache lzop flex bison gpref build-essential zip curl zlib1g-dev
+                zlib1g-dev:i386 libc6-dev lib32ncurses5 lib32z1 lib32bz2-1.0 lib32ncurses5-dev x11proto-core-dev
+                libx11-dev:i386 libreadline6-dev:i386 lib32z-dev libgl1-mesa-glx:i386 libgl1-mesa-dev g++-multilib
+                mingw32 tofrodos python-markdown libxml2-utils xsltproc readline-common libreadline6-dev libreadline6
+                lib32readline-gplv2-dev libncurses5-dev lib32readline5 lib32readline6 libreadline-dev
+                libreadline6-dev:i386 libreadline6:i386 bzip2 libbz2-dev libbz2-1.0 libghc-bzlib-dev lib32bz2-dev
+                libsdl1.2-dev libesd0-dev squashfs-tools pngcrush schedtool libwxgtk2.8-dev python</code>
         </li>
         <br>
         <br>
@@ -199,7 +197,7 @@
         </li>
         <br>
         <br>
-        <li>Type this to use the Java selector tool to switch to java-7-oracle
+        <li>Type this to use the Java selector tool to switch to java-6-oracle
             <mark>(optional)</mark>
             :
             <br>
@@ -207,7 +205,7 @@
             <code>sudo update-java</code>
             <br>
             <ins>(First select NONE to remove by pressing CANCEL, then select
-                <mark>'java-7-oracle'</mark>
+                <mark>'java-6-oracle'</mark>
                 and press OK to activate it.)
             </ins>
         </li>
@@ -274,14 +272,13 @@
     <hr>
 
     <footer>
-        <p>&copy; AICP 2015</p>
+        <p>&copy; AICP 2016</p>
     </footer>
 
 </div>
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-storage-api/1.8.1/jquery.storageapi.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="js/app.js"></script>
 </body>
 
