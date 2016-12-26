@@ -147,7 +147,11 @@
         /* Make Modal with data provided */
 
         makeModal = function (data, deviceName, deviceHeader) {
-            if (!data || data === '' || data.error === 'Nothing found') {
+            if (data === 'error') {
+                log(noDataMessage, 'error');
+                $('#modal').modal().find('.modal-body').html('There was an error connecting AICP servers');
+                $('#downloadModal').html('<h5>No OTAs found, sorry!</h5>');
+            } else if (!data || data === '' || data.error === 'Nothing found') {
                 log(noDataMessage, 'error');
                 $('#modal').modal().find('.modal-body').html('No data provided');
                 $('#downloadModal').html('<h5>No OTAs found, sorry!</h5>');
@@ -305,6 +309,7 @@
 
                     },
                     error: function (e) {
+                        makeModal('error', null, null);
                         log(e.message, 'error');
                     }
                 });
