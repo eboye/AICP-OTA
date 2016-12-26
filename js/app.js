@@ -7,6 +7,7 @@
 /* Configuration */
 (function ($) {
     'use strict';
+    //noinspection JSUnresolvedVariable
     var noDataMessage = 'No data provided!',
         noDeviceMessage = 'You have to specify device name!',
         domain = location.href.replace(location.hash, ""),
@@ -73,6 +74,9 @@
 
                 /* Sort array by OEMs then by name */
 
+                /** @namespace data.devices */
+                /** @namespace data.codename */
+                /** @namespace data.OEM */
                 var sortBy = 'OEM',
                     thenBy = 'name',
                     deviceThumb,
@@ -149,6 +153,7 @@
                 $('#downloadModal').html('<h5>No OTAs found, sorry!</h5>');
             } else {
 
+                /** @namespace data.updates */
                 var updates = data.updates,
                     deviceTable = '',
                     i,
@@ -193,6 +198,7 @@
                         tr = '<tr data-url="' + updates[i].url + '" class="success">';
                     }
 
+                    /** @namespace updates.md5 */
                     updateRow = tr +
                         '<td class="dload"><strong>' + time + '</strong></td>' +
                         '<td class="dload">' + updates[i].version + '</td>' +
@@ -272,6 +278,7 @@
                 log(deviceToGrab, 'error');
             } else {
 
+                //noinspection JSUnusedGlobalSymbols
                 $.ajax({
                     url: aicpAPI,
                     type: 'GET',
@@ -284,6 +291,9 @@
                     xhrFields: {
                         onprogress: function (e) {
 
+                            /** @namespace e.lengthComputable */
+                            /** @namespace e.loaded */
+                            /** @namespace e.total */
                             if (e.lengthComputable) {
                                 log(e.loaded / e.total * 100 + '%');
                             }
@@ -327,6 +337,7 @@
                 modalWithNewData(deviceToGrab, deviceHeader);
 
             }
+            //noinspection JSUnresolvedVariable,JSLint
             var _gaq = _gaq || [];
             _gaq.push(['_setAccount', 'UA-71822266-1']);
             _gaq.push(['_trackPageview', deviceToGrab]);
