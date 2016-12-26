@@ -14,7 +14,8 @@
         config = '/config/devices.json',
         deviceImages = '/imgs/devices/',
         oemCheck = '',
-        proxy = 'https://crossorigin.me/',
+        // proxy = 'https://crossorigin.me/',
+        proxy = 'http://cors-anywhere.herokuapp.com/',
         aicpAPI = proxy + 'http://updates.aicp-rom.com/update.php',
         storage = $.localStorage,
         graphHeight = 30;
