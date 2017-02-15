@@ -340,7 +340,6 @@
         if ($('body').hasClass('ota')) {
 
             $('.modal').modal();
-
             $.getJSON(domain + config, function (data) {
                 homePageRender(data);
                 $('#devicechoose').addClass('tabs').tabs();
