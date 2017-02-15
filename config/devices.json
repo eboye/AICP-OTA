@@ -106,6 +106,11 @@
       "codename": "klte"
     },
     {
+      "OEM": "Samsung",
+      "name": "Galaxy S5 (AU)",
+      "codename": "kltekdi"
+    },
+    {
       "OEM": "LG",
       "name": "G2",
       "codename": "ls980"
@@ -182,7 +187,7 @@
     },
     {
       "OEM": "Xiaomi",
-      "name": "Mi3",
+      "name": "Mi 3",
       "codename": "cancro"
     },
     {
@@ -199,11 +204,6 @@
       "OEM": "Xiaomi",
       "name": "Redmi Note 4G",
       "codename": "dior"
-    },
-    {
-      "OEM": "Nextbit",
-      "name": "Robin",
-      "codename": "ether"
     },
     {
       "OEM": "LG",
@@ -292,6 +292,11 @@
     },
     {
       "OEM": "OnePlus",
+      "name": "3T",
+      "codename": "oneplus3t"
+    },
+    {
+      "OEM": "OnePlus",
       "name": "X",
       "codename": "onyx"
     },
@@ -369,6 +374,81 @@
       "OEM": "Asus",
       "name": "Zenfone 2",
       "codename": "z00a"
+    },
+    {
+      "OEM": "Asus",
+      "name": "Zenfone 2 Laser",
+      "codename": "z00ed"
+    },
+    {
+      "OEM": "Lenovo",
+      "name": "A6000",
+      "codename": "a6000"
+    },
+    {
+      "OEM": "Lenovo",
+      "name": "Vibe K5 Plus",
+      "codename": "a6020"
+    },
+    {
+      "OEM": "Xiaomi",
+      "name": "Redmi 1S",
+      "codename": "armani"
+    },
+    {
+      "OEM": "Motorola",
+      "name": "Moto G4/G4 Plus",
+      "codename": "athene"
+    },
+    {
+      "OEM": "Sony",
+      "name": "Xperia Tablet Z2 4G",
+      "codename": "castor"
+    },
+    {
+      "OEM": "Sony",
+      "name": "Xperia Tablet Z2 WiFi",
+      "codename": "castor_windy"
+    },
+    {
+      "OEM": "Samsung",
+      "name": "Galaxy Tab S 10.5 LTE",
+      "codename": "chagalllte"
+    },
+    {
+      "OEM": "Xiaomi",
+      "name": "Mi 4i",
+      "codename": "ferrari"
+    },
+    {
+      "OEM": "Xiaomi",
+      "name": "Mi 5",
+      "codename": "gemini"
+    },
+    {
+      "OEM": "Xiaomi",
+      "name": "Mi Max",
+      "codename": "hydrogen"
+    },
+    {
+      "OEM": "Samsung",
+      "name": "Galaxy S4",
+      "codename": "i9500"
+    },
+    {
+      "OEM": "Huawei",
+      "name": "Honor 5X",
+      "codename": "kiwi"
+    },
+    {
+      "OEM": "LG",
+      "name": "G2 Docomo",
+      "codename": "l01f"
+    },
+    {
+      "OEM": "Xiaomi",
+      "name": "Mi 4c",
+      "codename": "libra"
     }
   ]
 }
