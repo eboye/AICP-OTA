@@ -1,8 +1,8 @@
 @font-face {
     font-family: 'aicp';
-    src: url('fonts/aicp.ttf?vz2aah') format('truetype'),
-    url('fonts/aicp.woff?vz2aah') format('woff'),
-    url('fonts/aicp.svg?vz2aah#aicp') format('svg');
+    src: url('fonts/aicp.ttf?9ui3ru') format('truetype'),
+    url('fonts/aicp.woff?9ui3ru') format('woff'),
+    url('fonts/aicp.svg?9ui3ru#aicp') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -24,6 +24,10 @@ i {
 
 .aicp-arrow_drop_down:before {
     content: "\e5c5";
+}
+
+.aicp-menu:before {
+    content: "\e5d2";
 }
 
 .aicp-code:before {
@@ -71,6 +75,13 @@ main {
 .brand-logo img {
     max-height: 56px;
     margin: 4px 4px 4px 0;
+}
+
+@media all and (max-width: 960px) {
+    .brand-logo img {
+        max-height: 40px;
+        margin: 12px 0 0;
+    }
 }
 
 .allcaps {
