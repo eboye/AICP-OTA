@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="description"
           content="OTA update page for AICP ROM. Find device and download flashable zip for your device.">
     <meta name="author" content="eboye">
@@ -27,18 +27,16 @@
 
     <title>AICP OTA</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/paper/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
             i[r] = i[r] || function () {
-                        (i[r].q = i[r].q || []).push(arguments)
-                    }, i[r].l = 1 * new Date();
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
             a = s.createElement(o),
-                    m = s.getElementsByTagName(o)[0];
+                m = s.getElementsByTagName(o)[0];
             a.async = 1;
             a.src = g;
             m.parentNode.insertBefore(a, m)
@@ -53,102 +51,116 @@
 </head>
 
 <body class="ota">
-
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="https://eboye.github.io/AICP-OTA/"><img src="imgs/logo.png" alt="AICP Logo"/>
-                AICP OTA</a>
+<header>
+    <nav class="blue-grey darken-4 nav-extended">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="https://eboye.github.io/AICP-OTA/" class="brand-logo">
+                    <img src="imgs/aicp_vector.svg" alt="AICP OTA" width="111" height="56"/>
+                </a>
+                <ul id="main-nav" class="right hide-on-med-and-down">
+                    <li class="active">
+                        <a href="https://eboye.github.io/AICP-OTA/">
+                            <i class="aicp-download left"></i>OTA updates
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://eboye.github.io/AICP-OTA/" target="_blank">
+                            <i class="aicp-google-plus left"></i>Google+ Community
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#!" class="dropdown-button" data-activates="source_code" data-beloworigin="true">
+                            <i class="aicp-code left"></i>Source code<i class="aicp-arrow_drop_down right"></i>
+                        </a>
+                    </li>
+                </ul>
+                <ul id="source_code" class="dropdown-content">
+                    <li>
+                        <a target="_blank" class="right-align blue-grey-text text-darken-4" href="https://github.com/AICP">
+                            <i class="aicp-github-alt left"></i>GitHub
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" class="right-align blue-grey-text text-darken-4" href="http://gerrit.aicp-rom.com/">
+                            <i class="aicp-code left"></i>Gerrit
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="menu-title allcaps blue-grey-text text-darken-4">Build tutorials</li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="build-on-linux.html" class="right-align blue-grey-text text-darken-4">
+                            <i class="aicp-linux left"></i>Linux
+                        </a>
+                    </li>
+                    <li>
+                        <a href="build-on-mac.html" class="right-align blue-grey-text text-darken-4">
+                            <i class="aicp-apple left"></i>Mac
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-content">
+                <ul id="devicechoose" class="tabs-transparent tabs-fixed-width">
+                    <li><a class="tab active" href="#!">AICP</a></li>
+                </ul>
+            </div>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="https://eboye.github.io/AICP-OTA/"><i class="fa fa-download"></i>OTA updates
-                    <span class="sr-only">(current)</span></a></li>
-                <li><a target="_blank" href="https://plus.google.com/u/0/communities/101008638920580274588"><i
-                        class="fa fa-google-plus"></i>Google+ Community</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i
-                            class="fa fa-code"></i>Source code<span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a target="_blank" class="text-right" href="https://github.com/AICP"><i
-                                class="fa fa-github pull-left"></i>GitHub</a></li>
-                        <li><a target="_blank" class="text-right" href="http://gerrit.aicp-rom.com/"><i
-                                class="fa fa-server pull-left"></i>Gerrit</a></li>
-                        <li class="divider"></li>
-                        <li class="menu-title text-center text-capitalize">Build tutorials</li>
-                        <li class="divider"></li>
-                        <li><a class="text-right" href="build-on-linux.html"><i
-                                class="fa fa-code pull-left"></i>Linux</a></li>
-                        <li><a class="text-right" href="build-on-mac.html"><i class="fa fa-apple pull-left"></i>Mac</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </div><!--/.navbar-collapse -->
+    </nav>
+    <div class="material_background blue-grey darken-4 hide">
+        <div class="container">
+            <h1>Hello, flash junkies!</h1>
+            <p>Here you can find flashable ZIPs for your beloving Android devices. Just choose your device OEM and find your
+                device in list.</p>
+        </div>
     </div>
-</nav>
-
-<div class="jumbotron material-jumbotron">
+</header>
+<main>
     <div class="container">
-        <h1>Hello, flash junkies!</h1>
-        <p>Here you can find flashable ZIPs for your beloving Android devices. Just choose your device OEM and find your
-            device in list.</p>
-        <div id="devicechoose" class="btn-group btn-group-justified btn-group-responsive" role="group"
-             aria-label="Device OEMs"></div>
+        <div id="thumbnail-devices" class="row"></div>
+    </div> <!-- /container -->
+</main>
+<footer class="page-footer grey lighten-4">
+    <div class="footer-copyright">
+        <div class="container">
+            <p class="blue-grey-text text-darken-4">
+                © 2017 AICP
+            </p>
+        </div>
     </div>
-</div>
-
-<div class="container">
-    <div id="thumbnail-devices" class="row"></div>
-
-    <hr>
-
-    <footer>
-        <p>&copy; AICP 2016</p>
-    </footer>
-</div> <!-- /container -->
+</footer>
 
 <!-- Modal -->
-<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="downloadModal" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
-                <div class="modal-title" id="downloadModal">Modal title</div>
-                <div class="graph">
-                    <div class="col-xs-1 pull-right bar0"></div>
-                    <div class="col-xs-1 pull-right bar1"></div>
-                    <div class="col-xs-1 pull-right bar2"></div>
-                    <div class="col-xs-1 pull-right bar3"></div>
-                    <div class="col-xs-1 pull-right bar4"></div>
-                    <div class="col-xs-1 pull-right bar5"></div>
-                    <div class="col-xs-1 pull-right bar6"></div>
-                    <div class="col-xs-1 pull-right bar7"></div>
-                    <div class="col-xs-1 pull-right bar8"></div>
-                    <div class="col-xs-1 pull-right bar9"></div>
-                    <div class="col-xs-1 pull-right bar10"></div>
-                    <div class="col-xs-1 pull-right bar11"></div>
-                </div>
-            </div>
-            <div class="modal-body"></div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+<div class="modal bottom-sheet" id="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 id="downloadModal">Modal title</h4>
+            <div class="graph row amber darken-4">
+                <div class="col s1 right bar0 grey lighten-5 amber-text text-darken-4"></div>
+                <div class="col s1 right bar1 grey lighten-5 amber-text text-darken-4"></div>
+                <div class="col s1 right bar2 grey lighten-5 amber-text text-darken-4"></div>
+                <div class="col s1 right bar3 grey lighten-5 amber-text text-darken-4"></div>
+                <div class="col s1 right bar4 grey lighten-5 amber-text text-darken-4"></div>
+                <div class="col s1 right bar5 grey lighten-5 amber-text text-darken-4"></div>
+                <div class="col s1 right bar6 grey lighten-5 amber-text text-darken-4"></div>
+                <div class="col s1 right bar7 grey lighten-5 amber-text text-darken-4"></div>
+                <div class="col s1 right bar8 grey lighten-5 amber-text text-darken-4"></div>
+                <div class="col s1 right bar9 grey lighten-5 amber-text text-darken-4"></div>
+                <div class="col s1 right bar10 grey lighten-5 amber-text text-darken-4"></div>
+                <div class="col s1 right bar11 grey lighten-5 amber-text text-darken-4"></div>
             </div>
         </div>
+        <div class="modal-body"></div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="modal-action modal-close waves-effect waves-green btn-flat">Close</button>
     </div>
 </div>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-storage-api/1.9.4/jquery.storageapi.min.js"></script>
 <script src="js/app.js"></script>
 </body>
