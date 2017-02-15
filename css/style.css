@@ -110,3 +110,7 @@ code {
 .graph {
     height: 50px;
 }
+
+#devicechoose.tabs .tab a {
+    padding: 0 16px;
+}
