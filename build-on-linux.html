@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="description" content="Tutorial on how to build AICP Custom ROM from source on Ubuntu Linux machine">
     <meta name="author" content="eboye">
     <link rel="apple-touch-icon" sizes="57x57" href="imgs/favicons/apple-icon-57x57.png">
@@ -25,20 +24,18 @@
     <meta name="msapplication-TileImage" content="imgs/favicons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-    <title>AICP OTA</title>
+    <title>Tutorial on how to build AICP Custom ROM from source on Ubuntu Linux machine</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/paper/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
             i[r] = i[r] || function () {
-                        (i[r].q = i[r].q || []).push(arguments)
-                    }, i[r].l = 1 * new Date();
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
             a = s.createElement(o),
-                    m = s.getElementsByTagName(o)[0];
+                m = s.getElementsByTagName(o)[0];
             a.async = 1;
             a.src = g;
             m.parentNode.insertBefore(a, m)
@@ -54,49 +51,59 @@
 
 <body>
 
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="blue-grey darken-4">
     <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="https://eboye.github.io/AICP-OTA/"><img src="imgs/logo.png" alt="AICP Logo"/>
-                AICP DIY Build</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="https://eboye.github.io/AICP-OTA/"><i class="fa fa-download"></i>OTA updates <span
-                        class="sr-only">(current)</span></a></li>
-                <li><a target="_blank" href="https://plus.google.com/u/0/communities/101008638920580274588"><i
-                        class="fa fa-google-plus"></i>Google+ Community</a></li>
-                <li class="dropdown active">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i
-                            class="fa fa-code"></i>Source code<span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a target="_blank" class="text-right" href="https://github.com/AICP"><i
-                                class="fa fa-github pull-left"></i>GitHub</a></li>
-                        <li><a target="_blank" class="text-right" href="http://gerrit.aicp-rom.com/"><i
-                                class="fa fa-server pull-left"></i>Gerrit</a></li>
-                        <li class="divider"></li>
-                        <li class="menu-title text-center text-capitalize">Build tutorials</li>
-                        <li class="divider"></li>
-                        <li class="active"><a class="text-right" href="build-on-linux.html"><i
-                                class="fa fa-code pull-left"></i>Linux</a></li>
-                        <li><a class="text-right" href="build-on-mac.html"><i class="fa fa-apple pull-left"></i>Mac</a>
-                        </li>
-                    </ul>
+        <div class="nav-wrapper">
+            <a href="https://eboye.github.io/AICP-OTA/" class="brand-logo">
+                <img src="imgs/aicp_vector.svg" alt="AICP OTA" width="111" height="56"/>
+            </a>
+            <ul id="main-nav" class="right hide-on-med-and-down">
+                <li>
+                    <a href="https://eboye.github.io/AICP-OTA/">
+                        <i class="aicp-download left"></i>OTA updates
+                    </a>
+                </li>
+                <li>
+                    <a href="https://eboye.github.io/AICP-OTA/" target="_blank">
+                        <i class="aicp-google-plus left"></i>Google+ Community
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="#!" class="dropdown-button" data-activates="source_code" data-beloworigin="true">
+                        <i class="aicp-code left"></i>Source code<i class="aicp-arrow_drop_down right"></i>
+                    </a>
+                </li>
+            </ul>
+            <ul id="source_code" class="dropdown-content">
+                <li>
+                    <a target="_blank" class="right-align blue-grey-text text-darken-4" href="https://github.com/AICP">
+                        <i class="aicp-github-alt left"></i>GitHub
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" class="right-align blue-grey-text text-darken-4" href="http://gerrit.aicp-rom.com/">
+                        <i class="aicp-code left"></i>Gerrit
+                    </a>
+                </li>
+                <li class="divider"></li>
+                <li class="menu-title allcaps blue-grey-text text-darken-4">Build tutorials</li>
+                <li class="divider"></li>
+                <li class="active">
+                    <a href="build-on-linux.html" class="right-align blue-grey-text text-darken-4">
+                        <i class="aicp-linux left"></i>Linux
+                    </a>
+                </li>
+                <li>
+                    <a href="build-on-mac.html" class="right-align blue-grey-text text-darken-4">
+                        <i class="aicp-apple left"></i>Mac
+                    </a>
                 </li>
             </ul>
         </div>
-        <!--/.navbar-collapse -->
     </div>
 </nav>
 
-<div class="jumbotron material-jumbotron">
+<div class="jumbotron material-jumbotron blue-grey darken-4 white-text">
     <div class="container">
         <h1>How to build AICP on Linux?</h1>
         <p>This tutorial is for <strong>advanced</strong> Linux users,
@@ -117,9 +124,9 @@
             <br>
             <br>
             <code>sudo apt-get purge openjdk-\* icedtea-\* icedtea6-\*</code>
+            <br>
+            <br>
         </li>
-        <br>
-        <br>
         <li>Then type following to install correct Java 6
             <mark>(say OK to prompts and stuff)</mark>
             :
@@ -127,9 +134,9 @@
             <br>
             <code>sudo add-apt-repository ppa:webupd8team/java && sudo apt-get update && sudo apt-get install
                 oracle-java6-installer</code>
+            <br>
+            <br>
         </li>
-        <br>
-        <br>
         <li>Now type the following to install needed utilities:
             <br>
             <br>
@@ -140,25 +147,25 @@
                 lib32readline-gplv2-dev libncurses5-dev lib32readline5 lib32readline6 libreadline-dev
                 libreadline6-dev:i386 libreadline6:i386 bzip2 libbz2-dev libbz2-1.0 libghc-bzlib-dev lib32bz2-dev
                 libsdl1.2-dev libesd0-dev squashfs-tools pngcrush schedtool libwxgtk2.8-dev python</code>
+            <br>
+            <br>
         </li>
-        <br>
-        <br>
         <li>Now tpye following to create symbolic link:
             <br>
             <br>
             <code>sudo ln -s /usr/lib/i386-linux-gnu/mesa/libGL.so.1 /usr/lib/i386-linux-gnu/libGL.so</code>
+            <br>
+            <br>
         </li>
-        <br>
-        <br>
         <li>Create a folder for your repo
             <mark>(aicp or some other path if you like)</mark>
             :
             <br>
             <br>
             <code>mkdir ~/aicp</code>
+            <br>
+            <br>
         </li>
-        <br>
-        <br>
         <li>Get the repo binary:
             <br>
             <br>
@@ -167,23 +174,23 @@
             <code>curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo</code>
             <br>
             <code>chmod a+x ~/bin/repo</code>
+            <br>
+            <br>
         </li>
-        <br>
-        <br>
         <li>Edit <abbr title="~/.bashrc file">~/.bashrc</abbr> file to set some local settings:
             <br>
             <br>
             <code>sudo gedit ~/.bashrc</code>
+            <br>
+            <br>
         </li>
-        <br>
-        <br>
         <li>At the end of the file add following line, save the file and exit:
             <br>
             <br>
             <code>export PATH=~/bin:$PATH</code>
+            <br>
+            <br>
         </li>
-        <br>
-        <br>
         <li>Back to terminal. Type this to install a useful Java selector tool
             <mark>(optional)</mark>
             :
@@ -194,9 +201,9 @@
             <code>wget http://webupd8.googlecode.com/files/update-java > ~/bin/update-java</code>
             <br>
             <code>chmod a+x ~/bin/update-java</code>
+            <br>
+            <br>
         </li>
-        <br>
-        <br>
         <li>Type this to use the Java selector tool to switch to java-6-oracle
             <mark>(optional)</mark>
             :
@@ -208,9 +215,9 @@
                 <mark>'java-6-oracle'</mark>
                 and press OK to activate it.)
             </ins>
+            <br>
+            <br>
         </li>
-        <br>
-        <br>
         <li>Type the following to navigate to the repo folder:
             <br>
             <code>cd ~/aicp</code>
@@ -228,16 +235,16 @@
             <br>
             <br>
             <code>repo init -u https://github.com/AICP/platform_manifest.git -b n7.1</code>
+            <br>
+            <br>
         </li>
-        <br>
-        <br>
         <li>sync repo:
             <br>
             <br>
             <code>repo sync</code>
+            <br>
+            <br>
         </li>
-        <br>
-        <br>
     </ol>
     <div class="page-header">
         <h3>Building</h3>
@@ -252,9 +259,9 @@
             <code>. build/envsetup.sh</code>
             <br>
             <code>brunch</code>
+            <br>
+            <br>
         </li>
-        <br>
-        <br>
         <li>You can also build
             <mark>(and see how long it took)</mark>
             for specific devices like this:
@@ -263,23 +270,25 @@
             <code>. build/envsetup.sh</code>
             <br>
             <code>time brunch m7</code>
+            <br>
+            <br>
         </li>
-        <br>
-        <br>
     </ol>
     <p>Remember to <code>make clobber</code> every now and then!</p>
 
-    <hr>
-
-    <footer>
-        <p>&copy; AICP 2016</p>
-    </footer>
-
 </div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<footer class="page-footer grey lighten-4">
+    <div class="footer-copyright">
+        <div class="container">
+            <p class="blue-grey-text text-darken-4">
+                © 2017 AICP
+            </p>
+        </div>
+    </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-storage-api/1.9.4/jquery.storageapi.min.js"></script>
 <script src="js/app.js"></script>
 </body>
-
 </html>

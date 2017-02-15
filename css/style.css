@@ -1,120 +1,101 @@
+@font-face {
+    font-family: 'aicp';
+    src: url('fonts/aicp.ttf?vz2aah') format('truetype'),
+    url('fonts/aicp.woff?vz2aah') format('woff'),
+    url('fonts/aicp.svg?vz2aah#aicp') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+i {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'aicp', monospace !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.aicp-arrow_drop_down:before {
+    content: "\e5c5";
+}
+
+.aicp-code:before {
+    content: "\e903";
+}
+
+.aicp-google-plus:before {
+    content: "\e904";
+}
+
+.aicp-download:before {
+    content: "\e905";
+}
+
+.aicp-github-alt:before {
+    content: "\e900";
+}
+
+.aicp-apple:before {
+    content: "\e901";
+}
+
+.aicp-linux:before {
+    content: "\e902";
+}
+
 body {
-    padding-top: 64px;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
-.material-jumbotron {
-    background-image: url("../imgs/material_back.png");
-    background-size: cover;
-    color: #fff;
+main {
+    flex: 1 0 auto;
 }
 
-.material-jumbotron h1 {
-    color: #fff;
-}
-
-.navbar-brand {
-    padding: 0 15px;
-}
-
-.navbar-brand > img {
-    display: inline-block;
-    max-height: 60px;
-}
-
-.navbar .fa {
-    font-size: 1.5em;
-    margin-right: 10px;
-}
-
-.navbar .fa.fa-google-plus {
-    vertical-align: middle;
-}
-
-.navbar .menu-title {
-    padding: 3px 20px;
-    font-weight: bold;
-    cursor: default;
-}
-
-.anchor-fix:before {
-    content: '';
-    display: block;
-    position: relative;
-    width: 0;
-    height: 80px;
-    margin-top: -80px;
-}
-
-.modal-btn {
-    cursor: pointer;
+.modal.bottom-sheet {
+    max-height: 75%;
 }
 
 .modal table tr {
     cursor: pointer;
 }
 
+.brand-logo img {
+    max-height: 56px;
+    margin: 4px 4px 4px 0;
+}
+
+.allcaps {
+    text-transform: uppercase !important;
+}
+
+.menu-title {
+    font-size: 1rem;
+    display: block;
+    line-height: 22px;
+    padding: 14px 16px;
+    text-align: center !important;;
+}
+
 code {
     word-wrap: normal;
     word-break: break-all;
+    background-color: #eee;
+    padding: 5px 10px;
+    border-radius: 2px;
+    display: inline-block;
 }
 
 /* Graph */
 
 .graph {
-    background-color: #2196f3;
     height: 50px;
-}
-
-.graph div {
-    background-color: #fff;
-    color: #2196f3;
-}
-
-/* Responsive Button Group */
-
-@media (max-width: 1201px) {
-    .btn-group-responsive .btn {
-        padding: 10px 5px;
-        font-size: 15px;
-    }
-}
-
-@media (max-width: 991px) {
-    .btn-group-responsive .btn {
-        padding: 10px 5px;
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 768px) {
-    .btn-group-responsive .pull-left,
-    .btn-group-responsive .pull-right {
-        float: none;
-    }
-
-    .btn-group-responsive .btn {
-        display: block;
-        width: calc(50% - 10px);
-        padding-right: 0;
-        padding-left: 0;
-        margin: 0 5px 10px;
-        font-size: 17px;
-        float: left;
-    }
-
-    .btn-group-responsive .btn:last-child {
-        margin-bottom: 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .btn-group-responsive .btn {
-        width: 100%;
-        margin: 0 0 10px;
-        float: none;
-    }
-}
-
-#devicechoose .btn {
-    padding: 10px 0;
 }
