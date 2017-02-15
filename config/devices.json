@@ -449,6 +449,11 @@
       "OEM": "Xiaomi",
       "name": "Mi 4c",
       "codename": "libra"
+    },
+    {
+      "OEM": "Ark",
+      "name": "Benefit A3",
+      "codename": "peach"
     }
   ]
 }
