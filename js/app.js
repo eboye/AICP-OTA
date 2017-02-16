@@ -20,6 +20,15 @@
         storage = $.localStorage,
         graphHeight = 30;
 
+    //noinspection JSLint
+    jQuery.extend(
+        jQuery.expr[':'].containsCI = function (a, i, m) {
+            //-- faster than jQuery(a).text()
+            var sText = (a.textContent || a.innerText || "");
+            var zRegExp = new RegExp(m[3], 'i');
+            return zRegExp.test(sText);
+        }
+    );
     /* Main Functions */
 
     /* Colored ConsoleLog */
@@ -125,8 +134,8 @@
                     '</div>' +
                     '</div>';
                 oemHeader = '<div class="col s12">' +
-                    '<div class="row" id="' + devices[i].OEM.toLowerCase() + '">' +
-                    '<div class="col s12">' +
+                    '<div class="row tab-content" id="' + devices[i].OEM.toLowerCase() + '">' +
+                    '<div class="col s12 oem-title">' +
                     '<h3>' + devices[i].OEM + '</h3>' +
                     '</div>' +
                     '</div>' +
@@ -335,8 +344,24 @@
 
     }
 
+    function filter(searchParam) {
+        var tabContent = $('.tab-content'),
+            found = $('#thumbnail-devices').find('.card-content h5:containsCI(' + searchParam + '),.card-content h5 strong:containsCI(' + searchParam + '),.card-content h6 .chip:containsCI(' + searchParam + ')').closest('.modal-btn');
+        if (searchParam && searchParam !== '') {
+            $('.modal-btn').addClass('hide');
+            found.removeClass('hide');
+            tabContent.addClass('active').show();
+            tabContent.find('.oem-title').hide();
+        } else {
+            $('.modal-btn').removeClass('hide');
+            tabContent.find('.oem-title').show();
+            tabContent.removeClass('active').hide().first().addClass('active').show();
+        }
+    }
+
     /* OTA page only */
     $(function () {
+        var search = $('#search');
         if ($('body').hasClass('ota')) {
             $('.button-collapse').sideNav({
                 menuWidth: 300, // Default is 300
@@ -348,6 +373,7 @@
             $.getJSON(domain + config, function (data) {
                 homePageRender(data);
                 $('#devicechoose').addClass('tabs').tabs();
+                filter(search.val());
             });
 
             $(document).on('click', '.modal-btn', function () {
@@ -377,7 +403,16 @@
                 var downloadLink = $(this).parent().attr('data-url');
                 window.open(downloadLink, '_blank');
             });
-
+            if (search.val()) {
+                search.next('label').css('opacity', 0);
+            }
+            search.on('focus', function () {
+                $(this).next('label').css('opacity', 0);
+            });
+            search.on('change keyup', function () {
+                var searchParam = $(this).val();
+                filter(searchParam);
+            });
         }
     });
 }(jQuery));
