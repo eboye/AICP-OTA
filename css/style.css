@@ -1,8 +1,8 @@
 @font-face {
     font-family: 'aicp';
-    src: url('fonts/aicp.ttf?z4tzxi') format('truetype'),
-    url('fonts/aicp.woff?z4tzxi') format('woff'),
-    url('fonts/aicp.svg?z4tzxi#aicp') format('svg');
+    src: url('fonts/aicp.ttf?pipf44') format('truetype'),
+    url('fonts/aicp.woff?pipf44') format('woff'),
+    url('fonts/aicp.svg?pipf44#aicp') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -17,6 +17,18 @@
     url('fonts/socicon.svg#sociconregular') format('svg');
     font-weight: normal;
     font-style: normal;
+}
+
+@media only screen and (min-width: 601px) {
+    .container {
+        width: 95%;
+    }
+}
+
+@media only screen and (min-width: 993px) {
+    .container {
+        width: 95%;
+    }
 }
 
 i {
@@ -38,8 +50,16 @@ i {
     content: "\e5c5";
 }
 
+.aicp-close:before {
+    content: "\e5cd";
+}
+
 .aicp-menu:before {
     content: "\e5d2";
+}
+
+.aicp-search:before {
+    content: "\e8b6";
 }
 
 .aicp-share:before {
@@ -119,6 +139,14 @@ code {
     padding: 5px 10px;
     border-radius: 2px;
     display: inline-block;
+}
+
+#search:focus ~ label {
+    opacity: 0;
+}
+
+.modal-btn {
+    cursor: pointer;
 }
 
 /* Graph */
