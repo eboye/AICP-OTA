@@ -1,8 +1,20 @@
 @font-face {
     font-family: 'aicp';
-    src: url('fonts/aicp.ttf?9ui3ru') format('truetype'),
-    url('fonts/aicp.woff?9ui3ru') format('woff'),
-    url('fonts/aicp.svg?9ui3ru#aicp') format('svg');
+    src: url('fonts/aicp.ttf?z4tzxi') format('truetype'),
+    url('fonts/aicp.woff?z4tzxi') format('woff'),
+    url('fonts/aicp.svg?z4tzxi#aicp') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'socicon';
+    src: url('fonts/socicon.eot');
+    src: url('fonts/socicon.eot?#iefix') format('embedded-opentype'),
+    url('fonts/socicon.woff') format('woff'),
+    url('fonts/socicon.woff2') format('woff2'),
+    url('fonts/socicon.ttf') format('truetype'),
+    url('fonts/socicon.svg#sociconregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -28,6 +40,10 @@ i {
 
 .aicp-menu:before {
     content: "\e5d2";
+}
+
+.aicp-share:before {
+    content: "\e80d";
 }
 
 .aicp-code:before {
@@ -113,4 +129,52 @@ code {
 
 #devicechoose.tabs .tab a {
     padding: 0 16px;
+}
+
+/* Socicons */
+
+.socicon {
+    font-family: 'socicon', sans-serif !important;
+    font-style: normal;
+    font-size: 18px !important;
+}
+
+.fixed-action-btn ul li {
+    position: relative;
+}
+
+.share-btn ul {
+    display: none;
+}
+
+.share-btn:hover ul {
+    display: block;
+}
+
+.color-twitter {
+    background-color: #2CAAE1;
+}
+
+.color-facebook {
+    background-color: #3B579D;
+}
+
+.color-googleplus {
+    background-color: #DD4B39;
+}
+
+.color-pinterest {
+    background-color: #BD081C;
+}
+
+.color-pocket {
+    background-color: #ED4054;
+}
+
+.color-tumblr {
+    background-color: #34465D;
+}
+
+.color-linkedin {
+    background-color: #0F7AB4;
 }
