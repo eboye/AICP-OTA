@@ -122,14 +122,17 @@
 
                 /* Make device card */
 
-                deviceThumb = '<div data-codename="' + devices[i].codename + '" class="modal-btn col s12 m6 l3" data-target="modal">' +
+                deviceThumb = '<div data-codename="' + devices[i].codename + '" class="modal-btn col s12 m6 l3">' +
                     '<div class="card">' +
-                    '<div class="card-image">' +
+                    '<div class="card-image modal-trigger" data-target="modal">' +
                     '<img src="' + domain + deviceImages + devices[i].codename + '.jpg" alt="' + devices[i].codename + '">' +
                     '</div>' +
-                    '<div class="card-content">' +
+                    '<div class="card-content modal-trigger" data-target="modal">' +
                     '<h5>' + devices[i].name + '<br><div class="grey-text"><small>made by <strong>' + devices[i].OEM + '</strong></small></div></h5>' +
                     '<h6>codename: <span class="chip">' + devices[i].codename + '</span></h6>' +
+                    '</div>' +
+                    '<div class="card-action center">' +
+                    '<a class="download-latest" data-codename="' + devices[i].codename + '" href="#!">Download latest version</a>' +
                     '</div>' +
                     '</div>' +
                     '</div>';
@@ -344,6 +347,8 @@
 
     }
 
+    /* Quick search filter */
+
     function filter(searchParam) {
         var tabContent = $('.tab-content'),
             found = $('#thumbnail-devices').find('.card-content h5:containsCI(' + searchParam + '),.card-content h5 strong:containsCI(' + searchParam + '),.card-content h6 .chip:containsCI(' + searchParam + ')').closest('.modal-btn');
@@ -376,10 +381,52 @@
                 filter(search.val());
             });
 
-            $(document).on('click', '.modal-btn', function () {
+            $(document).on('click', '.download-latest', function (e) {
+                e.preventDefault();
+                var elem = $(this),
+                    deviceToGrab = elem.attr('data-codename'),
+                    localData = getLocalStorage(deviceToGrab),
+                    deviceDataLastChecked = $.now() - storage.get(deviceToGrab + '-timestamp');
 
-                var deviceToGrab = $(this).attr('data-codename'),
-                    deviceHeader = $(this).find('.card-content').html(),
+                if (localData !== null && (deviceDataLastChecked !== undefined || deviceDataLastChecked < 3600000)) { /* One hour is 3600000 ms */
+                    window.location = localData.updates[0].url;
+                } else {
+                    $.ajax({
+                        url: aicpAPI,
+                        type: 'GET',
+                        dataType: 'json',
+                        async: true,
+                        contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+                        data: {
+                            'device': deviceToGrab
+                        },
+                        xhrFields: {
+                            onprogress: function (e) {
+
+                                /** @namespace e.lengthComputable */
+                                /** @namespace e.loaded */
+                                /** @namespace e.total */
+                                if (e.lengthComputable) {
+                                    log(e.loaded / e.total * 100 + '%');
+                                }
+                            }
+                        },
+                        success: function (data) {
+                            window.location = data.updates[0].url;
+                        },
+                        error: function (e) {
+                            makeModal('error', null, null);
+                            log(e.message, 'error');
+                        }
+                    });
+                }
+            });
+
+            $(document).on('click', '.modal-trigger', function () {
+
+                var elem = $(this).closest('.modal-btn'),
+                    deviceToGrab = elem.attr('data-codename'),
+                    deviceHeader = elem.find('.card-content').html(),
                     localData = getLocalStorage(deviceToGrab),
                     deviceDataLastChecked = $.now() - storage.get(deviceToGrab + '-timestamp');
 
