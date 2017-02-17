@@ -131,8 +131,8 @@
                     '<h5>' + devices[i].name + '<br><div class="grey-text"><small>made by <strong>' + devices[i].OEM + '</strong></small></div></h5>' +
                     '<h6>codename: <span class="chip">' + devices[i].codename + '</span></h6>' +
                     '</div>' +
-                    '<div class="card-action center">' +
-                    '<a class="download-latest" data-codename="' + devices[i].codename + '" href="#!">Download latest version</a>' +
+                    '<div class="card-action center amber darken-3">' +
+                    '<a class="download-latest white-text" data-codename="' + devices[i].codename + '" href="#!">Download latest version</a>' +
                     '</div>' +
                     '</div>' +
                     '</div>';
