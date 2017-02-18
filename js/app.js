@@ -353,12 +353,14 @@
         var tabContent = $('.tab-content'),
             found = $('#thumbnail-devices').find('.card-content h5:containsCI(' + searchParam + '),.card-content h5 strong:containsCI(' + searchParam + '),.card-content h6 .chip:containsCI(' + searchParam + ')').closest('.modal-btn');
         if (searchParam && searchParam !== '') {
-            $('.modal-btn').addClass('hide');
+            $('.modal-btn,#thumbnail-devices>.col').addClass('hide');
             found.removeClass('hide');
+            found.closest('#thumbnail-devices>.col').removeClass('hide');
             tabContent.addClass('active').show();
             tabContent.find('.oem-title').hide();
         } else {
             $('.modal-btn').removeClass('hide');
+            $('#thumbnail-devices>.col').removeClass('hide');
             tabContent.find('.oem-title').show();
             tabContent.removeClass('active').hide().first().addClass('active').show();
         }
