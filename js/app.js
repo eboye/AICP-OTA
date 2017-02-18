@@ -184,7 +184,7 @@
             $('#modal').find('.modal-body').html('No data provided');
             $('#downloadModal').html('<h5>No OTAs found, sorry!</h5>');
         } else {
-
+            
             /** @namespace data.updates */
             var updates = data.updates,
                 deviceTable = '',
@@ -250,7 +250,7 @@
 
             // $('#modal').modal('open').find('.modal-body').html(deviceTable);
             $('#modal').find('.modal-body').html(deviceTable);
-            $('#downloadModal').html(deviceHeader);
+            //$('#downloadModal').html(deviceHeader);
 
         }
 
@@ -427,11 +427,18 @@
             $(document).on('click', '.modal-trigger', function () {
 
                 var elem = $(this).closest('.modal-btn'),
-                    deviceToGrab = elem.attr('data-codename'),
+                    deviceToGrab = elem.data('codename'),
                     deviceHeader = elem.find('.card-content').html(),
                     localData = getLocalStorage(deviceToGrab),
                     deviceDataLastChecked = $.now() - storage.get(deviceToGrab + '-timestamp');
-
+    
+                // show the device header and pre-loader without wait for ajax
+                $('#downloadModal').html(deviceHeader);
+                $('#modal').find('.modal-body').html('' +
+                    '<div class="progress">' +
+                    '   <div class="indeterminate"></div>' +
+                    '</div>');
+                
                 if (localData !== null && (deviceDataLastChecked !== undefined || deviceDataLastChecked < 3600000)) { /* One hour is 3600000 ms */
 
                     makeModal(localData, deviceToGrab, deviceHeader);
