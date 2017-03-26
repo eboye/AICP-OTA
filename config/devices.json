@@ -454,6 +454,46 @@
       "OEM": "Ark",
       "name": "Benefit A3",
       "codename": "peach"
+    },
+    {
+      "OEM": "Samsung",
+      "name": "Galaxy Tab S 10.5 Wi-Fi",
+      "codename": "chagallwifi"
+    },
+    {
+      "OEM": "Nextbit",
+      "name": "Robin",
+      "codename": "ether"
+    },
+    {
+      "OEM": "Google",
+      "name": "Nexus Player",
+      "codename": "fugu"
+    },
+    {
+      "OEM": "LG",
+      "name": "V20",
+      "codename": "h918"
+    },
+    {
+      "OEM": "Samsung",
+      "name": "Galaxy Tab S 8.4 Wi-Fi",
+      "codename": "klimtwifi"
+    },
+    {
+      "OEM": "Xiaomi",
+      "name": "Redmi Note 4",
+      "codename": "mido"
+    },
+    {
+      "OEM": "LeEco",
+      "name": "Le 2",
+      "codename": "s2"
+    },
+    {
+      "OEM": "THL",
+      "name": "W7",
+      "codename": "w7"
     }
   ]
 }
