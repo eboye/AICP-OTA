@@ -11,6 +11,11 @@
       "codename": "bacon"
     },
     {
+      "OEM": "OnePlus",
+      "name": "5",
+      "codename": "cheeseburger"
+    },
+    {
       "OEM": "Samsung",
       "name": "Galaxy S3",
       "codename": "d2spr"
@@ -61,14 +66,49 @@
       "codename": "d855"
     },
     {
+      "OEM": "Essential",
+      "name": "PH-1",
+      "codename": "mata"
+    },
+    {
       "OEM": "Google",
       "name": "Nexus 7 2013",
       "codename": "deb"
     },
     {
+      "OEM": "Google",
+      "name": "Pixel",
+      "codename": "sailfish"
+    },
+    {
+      "OEM": "Google",
+      "name": "Pixel XL",
+      "codename": "marlin"
+    },
+    {
+      "OEM": "Google",
+      "name": "Pixel 2 XL",
+      "codename": "taimen"
+    },
+    {
+      "OEM": "Google",
+      "name": "Pixel 2",
+      "codename": "walleye"
+    },
+    {
       "OEM": "Motorola",
       "name": "Moto G 2013",
       "codename": "falcon"
+    },
+    {
+      "OEM": "Motorola",
+      "name": "Moto G5",
+      "codename": "cedric"
+    },
+    {
+      "OEM": "Motorola",
+      "name": "Moto G5 Plus",
+      "codename": "potter"
     },
     {
       "OEM": "Google",
@@ -191,6 +231,31 @@
       "codename": "cancro"
     },
     {
+      "OEM": "Xiaomi",
+      "name": "Mi 6",
+      "codename": "sagit"
+    },
+    {
+      "OEM": "Xiaomi",
+      "name": "Mi 5s",
+      "codename": "capricorn"
+    },
+    {
+      "OEM": "Xiaomi",
+      "name": "Mi 5s Plus",
+      "codename": "natrium"
+    },
+    {
+      "OEM": "Xiaomi",
+      "name": "Mi MIX",
+      "codename": "lithium"
+    },
+    {
+      "OEM": "Xiaomi",
+      "name": "Mi MIX 2",
+      "codename": "chiron"
+    },
+    {
       "OEM": "Motorola",
       "name": "Moto X Pure 2015",
       "codename": "clark"
@@ -222,8 +287,13 @@
     },
     {
       "OEM": "Google",
-      "name": "Nexus 7 2013",
+      "name": "Nexus 7 2013 Wi-Fi",
       "codename": "grouper"
+    },
+    {
+      "OEM": "Google",
+      "name": "Nexus 7 2013",
+      "codename": "tilapia"
     },
     {
       "OEM": "LG",
@@ -239,6 +309,11 @@
       "OEM": "HTC",
       "name": "One M9 (GSM)",
       "codename": "himaul"
+    },
+    {
+      "OEM": "HTC",
+      "name": "One M9 (Verizon)",
+      "codename": "himawl"
     },
     {
       "OEM": "Samsung",
@@ -271,6 +346,11 @@
       "codename": "lux"
     },
     {
+      "OEM": "Motorola",
+      "name": "Moto Z",
+      "codename": "griffin"
+    },
+    {
       "OEM": "Google",
       "name": "Nexus 10",
       "codename": "manta"
@@ -279,6 +359,11 @@
       "OEM": "Samsung",
       "name": "Galaxy Note 2",
       "codename": "n7100"
+    },
+    {
+      "OEM": "Samsung",
+      "name": "Galaxy Note 10.1 2014 Wi-Fi",
+      "codename": "n1awifi"
     },
     {
       "OEM": "OnePlus",
@@ -294,6 +379,11 @@
       "OEM": "OnePlus",
       "name": "3T",
       "codename": "oneplus3t"
+    },
+    {
+      "OEM": "OnePlus",
+      "name": "5T",
+      "codename": "dumpling"
     },
     {
       "OEM": "OnePlus",
@@ -331,11 +421,6 @@
       "codename": "shamrock"
     },
     {
-      "OEM": "Nvidia",
-      "name": "Shield Tablet",
-      "codename": "shieldtablet"
-    },
-    {
       "OEM": "Google",
       "name": "Android One",
       "codename": "sprout4"
@@ -366,24 +451,19 @@
       "codename": "wt88047"
     },
     {
-      "OEM": "Asus",
-      "name": "Zenphone 2 (720p)",
-      "codename": "z008"
-    },
-    {
-      "OEM": "Asus",
-      "name": "Zenfone 2",
-      "codename": "z00a"
-    },
-    {
-      "OEM": "Asus",
-      "name": "Zenfone 2 Laser",
-      "codename": "z00ed"
-    },
-    {
       "OEM": "Lenovo",
       "name": "A6000",
       "codename": "a6000"
+    },
+    {
+      "OEM": "Lenovo",
+      "name": "P2",
+      "codename": "p2a42"
+    },
+    {
+      "OEM": "Lenovo",
+      "name": "ZUK Z2 Plus",
+      "codename": "z2_plus"
     },
     {
       "OEM": "Lenovo",
@@ -451,11 +531,6 @@
       "codename": "libra"
     },
     {
-      "OEM": "Ark",
-      "name": "Benefit A3",
-      "codename": "peach"
-    },
-    {
       "OEM": "Samsung",
       "name": "Galaxy Tab S 10.5 Wi-Fi",
       "codename": "chagallwifi"
@@ -486,14 +561,49 @@
       "codename": "mido"
     },
     {
+      "OEM": "Xiaomi",
+      "name": "Redmi 3S/3X",
+      "codename": "land"
+    },
+    {
+      "OEM": "Xiaomi",
+      "name": "Redmi 4X",
+      "codename": "santoni"
+    },
+    {
       "OEM": "LeEco",
       "name": "Le 2",
       "codename": "s2"
     },
     {
+      "OEM": "LeEco",
+      "name": "Le Pro 3",
+      "codename": "zl1"
+    },
+    {
+      "OEM": "LeEco",
+      "name": "Le Max 2",
+      "codename": "x2"
+    },
+    {
       "OEM": "LG",
       "name": "L90 (all variants)",
       "codename": "w7"
+    },
+    {
+      "OEM": "ZTE",
+      "name": "Axon 7",
+      "codename": "axon7"
+    },
+    {
+      "OEM": "Huawei",
+      "name": "Honor View 10",
+      "codename": "berkeley"
+    },
+    {
+      "OEM": "Oppo",
+      "name": "Find 7",
+      "codename": "find7"
     }
   ]
 }

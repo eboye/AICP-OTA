@@ -147,6 +147,14 @@ code {
 
 .modal-btn {
     cursor: pointer;
+<<<<<<< HEAD
+=======
+}
+
+.card .card-content h5 {
+    font-size: 1.3rem;
+    font-weight: 500;
+>>>>>>> master
 }
 
 /* Graph */
