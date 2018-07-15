@@ -128,7 +128,7 @@
                     '<img src="' + domain + deviceImages + devices[i].codename + '.jpg" alt="' + devices[i].codename + '">' +
                     '</div>' +
                     '<div class="card-content modal-trigger" data-target="modal">' +
-                    '<h5>' + devices[i].name + '<br><div class="grey-text"><small>made by <strong>' + devices[i].OEM + '</strong></small></div></h5>' +
+                    '<h5 class="card-title">' + devices[i].name + '<br><div class="grey-text"><small>made by <strong>' + devices[i].OEM + '</strong></small></div></h5>' +
                     '<h6>codename: <span class="chip">' + devices[i].codename + '</span></h6>' +
                     '</div>' +
                     '<div class="card-action center amber darken-3">' +

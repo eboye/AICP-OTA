@@ -1,0 +1,29 @@
+{
+  "devices": [
+    {
+      "OEM": "Ark",
+      "name": "Benefit A3",
+      "codename": "peach"
+    },
+    {
+      "OEM": "Asus",
+      "name": "Zenphone 2 (720p)",
+      "codename": "z008"
+    },
+    {
+      "OEM": "Asus",
+      "name": "Zenfone 2",
+      "codename": "z00a"
+    },
+    {
+      "OEM": "Asus",
+      "name": "Zenfone 2 Laser",
+      "codename": "z00ed"
+    },
+    {
+      "OEM": "Nvidia",
+      "name": "Shield Tablet",
+      "codename": "shieldtablet"
+    }
+  ]
+}
